@@ -264,27 +264,5 @@
       </main>
     </div>
 
-    <script>
-      const tabs = document.querySelectorAll('.tab-btn');
-      const items = document.querySelectorAll('.repair-item');
-
-      tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          tabs.forEach(t => t.classList.remove('text-blue-600', 'border-blue-600'));
-          tabs.forEach(t => t.classList.add('text-slate-500', 'border-transparent'));
-          tab.classList.remove('text-slate-500', 'border-transparent');
-          tab.classList.add('text-blue-600', 'border-blue-600');
-
-          const filter = tab.dataset.tab;
-          items.forEach(item => {
-            if (filter === 'all' || item.dataset.status === filter) {
-              item.style.display = 'flex';
-            } else {
-              item.style.display = 'none';
-            }
-          });
-        });
-      });
-    </script>
   </body>
 </html>
