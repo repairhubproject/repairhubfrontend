@@ -52,7 +52,7 @@
         </div>
       </div>
     </header>
-    <div class="md:flex w-full min-h-screen overflow-hidden">
+    <div class="md:flex w-full md:h-screen overflow-hidden">
       <aside class="w-2xs border-r h-full shadow-[4px_0_12px_rgba(0,0,0,0.15)] pt-40 max-md:hidden overflow-y-auto hide-scrollbar">
         <nav aria-label="Main navigation" class="px-5 mb-10">
           <ul class="w-[190px] flex flex-col gap-3">
@@ -132,117 +132,151 @@
           </div>
         </div>
       </aside>
-      <main>
-        <div class="flex flex-col gap-7">
-        <div>
-          <img src="../../src/assets/Profile banner.jpg" alt="" class="w-[100vw] h-[200px] pl-5 pt-10 align-middle">
+      <main class="flex-1 min-h-screen">
 
-          <div class="flex-2">
-          <img src="../../src/assets/Profile-pic.png" alt="profile picture" class="w-[200px] h-[200px] rounded-full absolute top-[150px] left-[250px] border-4 border-white">
-          <div>
-            <span class="text-3xl flex font-bold text-gray-800 absolute left-[450px] p-3.5">Samuel Adeyemi
-              <svg class="justify-content" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 3L8 6H4L5 10L2 12L5 14L4 18H8L9 21L12 19L15 21L16 18H20L19 14L22 12L19 10L20 6H16L15 3L12 5L9 3ZM16 8L17 9L10 16L7 13L8 12L10 14L16 8Z" fill="#2563EB"/>
-              </svg>
-            </span>
-          </div><br>
-          <span class="text-lg  text-gray-800 absolute left-[430px] p-5">samueladeyemi@gmail.com</span>
-        </div>
-        <section class="mt-[150px] ml-10">
-  <div class="flex justify-between gap-10 w-full px-10">
-
-    <!-- LEFT COLUMN -->
-    <div class="w-[45%]">
-      <ul>
-
-        <a href="edit-profile.html">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-user font-bold"></i>
-            <span class="ml-5">Edit Profile</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-        <a href="">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-chat"></i>
-            <span class="ml-5">Messages</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-        <a href="">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-clock"></i>
-            <span class="ml-5">Repair History</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-        <a href="">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-credit-card"></i>
-            <span class="ml-5">Payment Methods</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-      </ul>
-    </div>
-
-
-    <!-- RIGHT COLUMN -->
-    <div class="w-[45%]">
-      <ul>
-
-        <a href="">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-question"></i>
-            <span class="ml-5">Help and Support</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-        <a href="">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-gear-six"></i>
-            <span class="ml-5">Settings</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-        <a href="">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-bookmark-simple"></i>
-            <span class="ml-5">Saved Addresses</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-        <a href="">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-clock-counter-clockwise"></i>
-            <span class="ml-5">Ratings and Reviews</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-      </ul>
-    </div>
-
+  <!-- EDIT PROFILE TITLE -->
+  <div class="flex justify-end px-10 py-8">
+    <a href="/pages/customer/profile.html" class="flex items-center gap-2 text-slate-600 hover:text-blue-600" aria-label="Back to profile">
+      <i class="ph ph-caret-left text-2xl"></i>
+      <span>Back to Profile</span>
+    </a>
+    <h1 class="text-2xl font-bold text-slate-900">Edit Profile</h1>
   </div>
-</section>
 
-        <div class="w-[524px] h-[49px] bg-blue-700 mt-10 mx-auto rounded-[9px]">
-          <a href="">
-            <h1 class="text-white text-center text-lg font-bold pt-3">Logout</h1>
-          </a>
-        </div>
 
-        </div>
-        </div>
-      </main>
+  <!-- PROFILE + FORM -->
+  <section class="flex items-start justify-center gap-14 mt-10 px-10">
+
+    <!-- PROFILE CARD -->
+    <div class="relative w-[220px] h-[230px]">
+
+      <div
+        class="absolute inset-0 bg-cover bg-center rounded-lg"
+        style="background-image: url('../../src/assets/Profile banner.jpg');">
+      </div>
+
+      <div class="absolute top-5 left-1/2 -translate-x-1/2">
+        <img
+          src="../../src/assets/Profile-pic.png"
+          alt="Profile picture"
+          class="w-[140px] h-[140px] object-cover rounded-full border-4 border-white"
+        >
+
+        <button
+          class="absolute bottom-0 right-2 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center">
+          <i class="ph ph-camera"></i>
+        </button>
+      </div>
+
+      <div
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white rounded-lg shadow-md px-4 py-2 w-[190px] text-center">
+
+        <h2 class="font-bold text-lg">
+          Samuel Adeyemi
+        </h2>
+
+        <p class="text-[8px] tracking-widest">
+          samueladeyemi@gmail.com
+        </p>
+
+      </div>
+
     </div>
 
+
+    <!-- FORM -->
+    <div class="w-[480px] flex flex-col gap-9">
+
+      <!-- Full Name -->
+      <div class="h-[60px] border border-gray-200 rounded-lg shadow-md px-5 flex items-center gap-4">
+
+        <i class="ph ph-user text-2xl"></i>
+
+        <div class="flex-1">
+          <label class="block font-bold">
+            Full Name
+          </label>
+
+          <input
+            type="text"
+            value="Samuel Adeyemi"
+            class="w-full outline-none text-sm"
+          >
+        </div>
+
+        <button>
+          <i class="ph ph-pencil-simple text-xl"></i>
+        </button>
+
+      </div>
+
+
+      <!-- Contact Number -->
+      <div class="h-[60px] border border-gray-200 rounded-lg shadow-md px-5 flex items-center gap-4">
+
+        <i class="ph ph-phone text-2xl"></i>
+
+        <div class="flex-1">
+          <label class="block font-bold">
+            Contact Number
+          </label>
+
+          <input
+            type="tel"
+            value="09071234567"
+            class="w-full outline-none text-sm"
+          >
+        </div>
+
+        <button>
+          <i class="ph ph-pencil-simple text-xl"></i>
+        </button>
+
+      </div>
+
+
+      <!-- Email -->
+      <div class="h-[60px] border border-gray-200 rounded-lg shadow-md px-5 flex items-center gap-4">
+
+        <i class="ph ph-envelope text-2xl"></i>
+
+        <div class="flex-1">
+          <label class="block font-bold">
+            Email Address
+          </label>
+
+          <input
+            type="email"
+            value="samueladeyemi@gmail.com"
+            class="w-full outline-none text-sm"
+          >
+        </div>
+
+        <button>
+          <i class="ph ph-pencil-simple text-xl"></i>
+        </button>
+
+      </div>
+
+
+      <!-- Change Password -->
+      <button class="w-[150px] h-[30px] bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full mx-auto">
+        Change Password
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- DELETE ACCOUNT -->
+  <div class="flex justify-center mt-8">
+    <button class="text-red-500 text-2xl">
+      Delete Account
+    </button>
+  </div>
+
+</main>
+    </div>
   </body>
 </html>
