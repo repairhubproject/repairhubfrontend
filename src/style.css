@@ -21,3 +21,28 @@ body{
 }
 
 
+.category-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 56px;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: 0.2s ease;
+}
+
+.category-card span {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-card small {
+    color: #999;
+}
+
+.category-card.selected {
+    border: 2px solid #2563eb;
+}
