@@ -133,8 +133,8 @@
         </div>
       </aside>
       <main class="md:flex-1 w-full pt-5 md:pt-30 max-md:bg-[rgba(193,211,249,1)] min-h-screen overflow-y-auto hide-scrollbar">
-        <div class="w-[95%] mx-auto">
-          <div class="w-full flex justify-between min-h-full">
+        <div class="w-[95%] mx-auto flex flex-col gap-7">
+          <div class="w-full flex justify-between items-center">
             <div class="flex gap-3 items-center">
               <div class="w-[54px] h-[54px] bg-slate-300 rounded-full">
                 <img src="../../src/assets/profile.png" alt="" class="h-full w-full object-fill">
@@ -144,6 +144,45 @@
                 <p class="md:text-2xl text-lg text-black">what do you want to fix</p>
               </div>
             </div>
+            <i class="ph ph-bell text-2xl transition-all duration-300 hover:scale-105 cursor-pointer"></i>
+          </div>
+          <div class="border rounded-[20px] border-[#2563EB] md:hidden px-3 flex gap-3 w-full h-[45px] items-center">
+            <i class="ph ph-magnifying-glass text-base font-bold"></i>
+            <input type="text" placeholder="Search technicians, repairs or service....." class="flex-1">
+            <i class="ph ph-faders-horizontal font-bold text-base"></i>
+          </div>
+          <div class="flex flex-col w-full gap-10">
+            <div class="flex justify-between">
+              <h1 class="font-bold text-black text-xl md:text-2xl lg:text-4xl">Categories</h1>              
+              <a href="/pages/customer/categories" class="text-[#2563EB] text-base md:text-lg space-x-2 flex items-center">
+                <span>See Profile</span> 
+                <svg class="w-[10px] md:w-[13px] h-[19px] md:h-[22px]" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.785 11.785L2.35667 21.2133L0 18.8567L8.25 10.6067L0 2.35667L2.35667 0L11.785 9.42833C12.0975 9.74088 12.273 10.1647 12.273 10.6067C12.273 11.0486 12.0975 11.4725 11.785 11.785Z" fill="#2563EB"/></svg>
+              </a>
+            </div>
+            <div class="w-full flex gap-4 flex-wrap justify-between">
+              <div class="w-[102px] flex flex-col gap-1 items-start">
+                <img src="../../src/assets/images/repair-categpries/Rectangle 24 (1).png" class="w-auto h-auto object-cover" alt="">
+                <p class="text-sm lg:text-xl font-bold text-black">Electrical Services</p>
+              </div>
+              <div class="w-[102px] flex flex-col gap-1 items-start">
+                <img src="../../src/assets/images/repair-categpries/Rectangle 23 (1).png" class="w-auto h-auto object-cover" alt="">
+                <p class="text-sm lg:text-xl font-bold text-black">Plumbing Services</p>
+              </div>
+              <div class="w-[102px] flex flex-col gap-1 items-start">
+                <img src="../../src/assets/images/repair-categpries/Rectangle 20 (1).png" class="w-auto h-auto object-cover" alt="">
+                <p class="text-sm lg:text-xl font-bold text-black">Refrigerator Repair</p>
+              </div>
+              <div class="w-[102px] flex flex-col gap-1 items-start">
+                <img src="../../src/assets/images/repair-categpries/Rectangle 25 (1).png" class="w-auto h-auto object-cover" alt="">
+                <p class="text-sm lg:text-xl font-bold text-black"> Generator Repair</p>
+              </div>
+              <div class="w-[102px] flex flex-col gap-1 items-start">
+                <img src="../../src/assets/images/repair-categpries/Rectangle 22 (1).png" class="w-auto h-auto object-cover" alt="">
+                <p class="text-sm lg:text-xl font-bold text-black"> Electronics Repair</p>
+              </div>
+            </div>
+          </div>
+          <div class="w-full bg-[url('../../src/assets/images/Frame 249.png')] bg-cover bg-center bg-no-repeat h-[80px]">
           </div>
         </div>
       </main>
