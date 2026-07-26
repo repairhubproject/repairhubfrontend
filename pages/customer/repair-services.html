@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,7 +6,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../src/style.css">
-    <title>repairhubfrontend</title>
+    <title>repairhub-Repair Services</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -15,6 +16,11 @@
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css"
     />
   </head>
   <body class="">
@@ -52,8 +58,8 @@
         </div>
       </div>
     </header>
-    <div class="md:flex w-full h-screen overflow-hidden">
-      <aside class="overflow-y-auto hide-scrollbar w-2xs border-r h-full shadow-[4px_0_12px_rgba(0,0,0,0.15)] pt-40 max-md:hidden">
+    <div class="md:flex w-full md:h-screen overflow-hidden">
+      <aside class="w-2xs border border-slate-300 h-full shadow-[0px_0px_40px_rgba(0,0,0,0.2)] pt-40 max-md:hidden overflow-y-auto hide-scrollbar mb-4">
         <nav aria-label="Main navigation" class="px-5 mb-10">
           <ul class="w-[190px] flex flex-col gap-3">
             <li class="w-full bg-[rgba(193,211,249,1)] cursor-pointer px-3 py-2 rounded-lg">
@@ -131,118 +137,49 @@
             </div>
           </div>
         </div>
+        <div class="w-full text-center text-[#C4C4C4] text-base font-semibold my-5">
+          <p>2026 Repairhub</p>
+        </div>
       </aside>
-      <main class="overflow-y-auto">
-        <div class="flex flex-col gap-7">
-        <div>
-          <img src="../../src/assets/Profile banner.jpg" alt="" class="w-[100vw] h-[200px] pl-5 pt-10 align-middle">
-
-          <div class="flex-2">
-          <img src="../../src/assets/Profile-pic.png" alt="profile picture" class="w-[200px] h-[200px] rounded-full absolute top-[150px] left-[250px] border-4 border-white">
-          <div>
-            <span class="text-3xl flex font-bold text-gray-800 absolute left-[450px] p-3.5">Samuel Adeyemi
-              <svg class="justify-content" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 3L8 6H4L5 10L2 12L5 14L4 18H8L9 21L12 19L15 21L16 18H20L19 14L22 12L19 10L20 6H16L15 3L12 5L9 3ZM16 8L17 9L10 16L7 13L8 12L10 14L16 8Z" fill="#2563EB"/>
-              </svg>
-            </span>
-          </div><br>
-          <span class="text-lg  text-gray-800 absolute left-[430px] p-5">samueladeyemi@gmail.com</span>
-        </div>
-        <section class="mt-[150px] ml-10">
-  <div class="flex justify-between gap-10 w-full px-10">
-
-    <!-- LEFT COLUMN -->
-    <div class="w-[45%]">
-      <ul>
-
-        <a href="edit-profile.html">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-user font-bold"></i>
-            <span class="ml-5">Edit Profile</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-        <a href="">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-chat"></i>
-            <span class="ml-5">Messages</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-        <a href="">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-clock"></i>
-            <span class="ml-5">Repair History</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-        <a href="">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-credit-card"></i>
-            <span class="ml-5">Payment Methods</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-      </ul>
-    </div>
-
-
-    <!-- RIGHT COLUMN -->
-    <div class="w-[45%]">
-      <ul>
-
-        <a href="">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-question"></i>
-            <span class="ml-5">Help and Support</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-        <a href="">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-gear-six"></i>
-            <span class="ml-5">Settings</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-        <a href="">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-bookmark-simple"></i>
-            <span class="ml-5">Saved Addresses</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-        <a href="">
-          <li class="bg-white shadow mb-4 h-12 flex items-center px-4 rounded-[10px]">
-            <i class="ph ph-clock-counter-clockwise"></i>
-            <span class="ml-5">Ratings and Reviews</span>
-            <span class="ml-auto">></span>
-          </li>
-        </a>
-
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-        <div class="w-[524px] h-[49px] bg-blue-700 mt-10 mx-auto rounded-[9px]">
-          <a href="">
-            <h1 class="text-white text-center text-lg font-bold pt-3">Logout</h1>
-          </a>
-        </div>
-
-        </div>
+      <main class="md:flex-1 pt-5 md:pt-30 mx-auto w-full max-md:bg-[rgba(193,211,249,1)] min-h-screen overflow-y-auto hide-scrollbar">
+        <div class="flex flex-col gap-10 w-[95%] mx-auto">
+          <h1 class="md:text-2xl text-xl font-bold mb-7">Repair Services</h1>
+          <div class="space-y-3">
+            <div class="flex gap-4 flex-wrap">
+              <button class="px-5 py-3 text-white bg-[#2563EB] active rounded-3xl hover:bg-[#1d4ed8] transition-all duration-300 ease cursor-pointer">Popular</button>
+              <button class="px-5 py-3 text-[#8E8E96] bg-[#EEEEEE] rounded-3xl hover:bg-[#1d4ed8] transition-all duration-300 ease hover:text-white cursor-pointer">Phones</button>
+              <button class="px-5 py-3 text-[#8E8E96] bg-[#EEEEEE] rounded-3xl hover:bg-[#1d4ed8] transition-all duration-300 ease hover:text-white cursor-pointer">Laptops</button>
+              <button class="px-5 py-3 text-[#8E8E96] bg-[#EEEEEE] rounded-3xl hover:bg-[#1d4ed8] transition-all duration-300 ease hover:text-white cursor-pointer">Appliances</button>
+            </div>
+          </div>
         </div>
       </main>
     </div>
+    <nav class="fixed bottom-0 left-0 right-0 z-50 flex px-1 h-16 items-center justify-around gap-5 border-t border-gray-200 bg-white shadow-[0_-4px_12px_rgba(0,0,0,0.08)] md:hidden" aria-label="Bottom navigation">
+      <a href="/pages/customer/dashboard.html" class="flex flex-col items-center gap-1 text-blue-600">
+        <i class="ph-fill ph-house text-xl"></i>
+        <span class="text-xs">Home</span>
+      </a>
 
+      <a href="/pages/customer/Categories.html" class="text-center flex flex-col items-center gap-1 text-gray-500 hover:text-blue-600">
+        <i class="ph-fill ph-user text-xl"></i>
+        <span class="text-xs">Technician profile</span>
+      </a>
+
+      <a href="/pages/customer/Request.html" class="text-center flex flex-col items-center gap-1 text-gray-500 hover:text-blue-600">
+        <i class="ph-fill ph-calendar-blank text-xl"></i>
+        <span class="text-xs">Bookings</span>
+      </a>
+
+      <a href="/pages/customer/Message.html" class="text-center flex flex-col items-center gap-1 text-gray-500 hover:text-blue-600">
+        <i class="ph-fill ph-bell-simple text-xl"></i>
+        <span class="text-xs">Notifications</span>
+      </a>
+
+      <a href="/pages/customer/profile.html" class="text-center flex flex-col items-center gap-1 text-gray-500 hover:text-blue-600">
+        <i class="ph-fill ph-user text-xl"></i>
+        <span class="text-xs">Profile</span>
+      </a>
+    </nav>
   </body>
 </html>
