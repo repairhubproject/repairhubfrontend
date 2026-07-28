@@ -1,17 +1,11 @@
-import { login } from "../api/auth.js";
 
-console.log('log in page')
+import { login } from "./api/auth.js";
 
 const form = document.getElementById("loginForm");
-const button = document.getElementById('login-button')
 
 form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
-
-    button.disabled = true;
-
-    button.textContent = "logging in..."
 
     const credentials = {
 
@@ -27,15 +21,12 @@ form.addEventListener("submit", async (e) => {
 
         alert("Login Successful");
 
-        window.location.href = "/pages/customer/dashboard.html";
+        window.location.href = "/dashboard.html";
 
     } catch (error) {
 
         alert(error.message);
 
-    } finally {
-      button.disabled = false;
-      button.textContent = "Login";
     }
 
 });
