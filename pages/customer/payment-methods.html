@@ -4,11 +4,242 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css">
-    <title>repairhubfrontend</title>
+    <link rel="stylesheet" href="../../src/style.css">
+    <title>Payment Methods | RepairHub</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
   </head>
-  <body>
-    <div id="app" class="w-full bg-black font-bold text-xl text-center text-white p-10"> welcome to repairhubfrontend</div>
-    <!-- <script type="module" src="/src/main.js"></script> -->
+  <body class="">
+    <header class="w-full shadow-[0_2px_10px_rgba(0,0,0,0.08)] fixed top-0 left-0 py-3 z-50 bg-white max-md:hidden">
+      <div class="flex justify-between gap-7 max-w-7xl mx-auto items-center w-[95%]">
+        <div class="flex items-center gap-5">
+          <div class="w-[35px] h-[34px] lg:w-[65px] lg:h-[64px]">
+            <img src="../../src/assets/images/logo.png" alt="" class="object-fit w-full h-full">
+          </div>
+          <span class="font-semibold text-black lg:text-2xl text-lg">RepairHub</span>
+        </div>
+        <div class="search-box flex md:w-xs lg:w-xl border border-[rgba(0,0,0,0.4)] px-2 rounded-lg h-12 items-center">
+          <input type="text" placeholder="Search for a service" class="w-full h-full outline-none">
+          <i class="ph ph-magnifying-glass text-lg"></i>
+        </div>
+        <div class="flex items-center gap-5">
+          <i class="ph ph-bell text-xl transition-all duration-300 hover:scale-105 cursor-pointer"></i>
+          <div class="flex gap-3 items-center">
+            <div class="lg:w-[54px] lg:h-[54px] w-[44px] h-[44px] bg-slate-300 rounded-full">
+              <img src="../../src/assets/profile.png" alt="" class="h-full w-full object-fill">
+            </div>
+            <span class="text-base text-black">John Bull</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="md:flex w-full h-screen overflow-hidden">
+      <aside class="w-2xs border-r h-full shadow-[4px_0_12px_rgba(0,0,0,0.15)] pt-40 max-md:hidden overflow-y-auto hide-scrollbar">
+        <nav aria-label="Main navigation" class="px-5 mb-10">
+          <ul class="w-[190px] flex flex-col gap-3">
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a href="/pages/customer/dashboard.html" class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2">
+                <i class="ph-fill ph-house text-xl"></i>
+                <span class="">Home</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a href="/pages/customer/dashboard.html" class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2">
+                <i class="ph-fill ph-grid-four text-xl"></i>
+                <span class="">Categories</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a href="/pages/customer/booking.html" class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2">
+                <i class="ph-fill ph-calendar-blank text-xl"></i>
+                <span class="">Bookings</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a href="/pages/customer/message" class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2">
+                <i class="ph-fill ph-chat text-xl"></i>
+                <span class="">Message</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a href="/pages/customer/notifications.html" class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2">
+                <i class="ph-fill ph-bell-simple text-xl"></i>
+                <span class="">Notification</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a href="/pages/customer/saved-addresses.html" class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2">
+                <i class="ph-fill ph-bookmark-simple text-xl"></i>
+                <span class="">Saved</span>
+              </a>
+            </li>
+            <li class="w-full bg-[rgba(193,211,249,1)] cursor-pointer px-3 py-2 rounded-lg">
+              <a href="/pages/customer/profile.html" class="text-base text-[rgba(37,99,235,1)] flex items-center gap-2">
+                <i class="ph-fill ph-user text-xl"></i>
+                <span class="">Profile</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a href="/pages/customer/settings.html" class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2">
+                <i class="ph-fill ph-gear text-xl"></i>
+                <span class="">Settings</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a href="/pages/customer/help.html" class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2">
+                <i class="ph-fill ph-info text-xl"></i>
+                <span class="">Help & Support</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="px-1 flex flex-col gap-1 py-1">
+          <div class="bg-[rgba(193,211,249,1)] rounded-lg pt-3 pb-10">
+            <h1 class="text-[#8E8E96] text-base mb-10 text-center">QUICK ACTIONS</h1>
+            <div class="flex w-full flex-col gap-3">
+              <button class="bg-[#2563EB33/20] text-center rounded-lg py-4 font-semibold text-[#2563EB] text-sm hover:text-white hover:bg-[#2563EB] transition-all duration-300 ease border border-[#2563EB] cursor-pointer box-border">Request Repair</button>
+              <button class="bg-white text-center rounded-lg py-4 font-semibold text-[#8E8E96] text-sm hover:text-white hover:bg-[#2563EB] transition-all duration-300 ease border border-[#2563EB] cursor-pointer">Find Technician</button>
+            </div>
+          </div>
+          <div class="bg-[rgba(193,211,249,1)] rounded-lg pt-3 px-3 pb-10">
+            <div class="flex flex-col gap-1 mb-7 text-center">
+              <h1 class="text-[#8E8E96] text-base">Need Help?</h1>
+              <p class="text-base text-slate-400">Our Support team</p>
+              <p class="text-base text-[#8E8E96] text-slate-400">is here to help you</p>
+            </div>
+            <div class="flex w-full flex-col gap-3">
+              <button class="bg-[#2563EB33/20] text-center rounded-lg py-4 font-semibold text-[#2563EB] text-sm hover:text-white hover:bg-[#2563EB] transition-all duration-300 ease border border-[#2563EB] cursor-pointer box-border">Contact Support</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="flex-1 h-full overflow-y-auto hide-scrollbar pt-32 px-10 pb-10">
+
+        <!-- BACK + TITLE -->
+        <div class="flex items-center gap-3 mb-8">
+          <a href="profile.html" class="text-slate-600 hover:text-blue-600">
+            <i class="ph ph-caret-left text-2xl"></i>
+          </a>
+          <h1 class="text-2xl font-bold text-slate-900">Payment Methods</h1>
+        </div>
+
+        <div class="w-full">
+
+          <!-- CURRENT METHOD -->
+          <h2 class="text-sm font-semibold text-slate-700 mb-3">Current Method</h2>
+          <label class="flex items-center gap-4 px-5 py-4 bg-white shadow-md mb-8 cursor-pointer">
+            <input type="checkbox" name="payment-method" value="cash" id="pm-cash" class="hidden peer" checked>
+            <div class="w-11 h-11 rounded-lg bg-green-100 flex items-center justify-center text-green-600">
+              <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_1008_491)">
+                  <path d="M53.5812 15.4126H4.54083C2.53458 15.4126 0.908203 17.0363 0.908203 19.0391V44.4249C0.908203 46.4278 2.53458 48.0515 4.54083 48.0515H53.5812C55.5875 48.0515 57.2139 46.4278 57.2139 44.4249V19.0391C57.2139 17.0363 55.5875 15.4126 53.5812 15.4126Z" fill="#55BB8C"/>
+                  <path d="M29.061 42.6118C35.0797 42.6118 39.9588 37.7408 39.9588 31.7322C39.9588 25.7235 35.0797 20.8525 29.061 20.8525C23.0422 20.8525 18.1631 25.7235 18.1631 31.7322C18.1631 37.7408 23.0422 42.6118 29.061 42.6118Z" fill="#FEDC55"/>
+                  <path d="M57.2139 19.0391V23.0827C56.2197 23.984 54.9241 24.482 53.5812 24.479C52.1361 24.479 50.7501 23.9058 49.7283 22.8857C48.7064 21.8655 48.1323 20.4819 48.1323 19.0391C48.1293 17.6985 48.6281 16.4051 49.5309 15.4126H53.5812C54.5438 15.4155 55.4661 15.7985 56.1467 16.478C56.8273 17.1574 57.211 18.0782 57.2139 19.0391ZM57.2139 40.3813V44.4249C57.211 45.3859 56.8273 46.3066 56.1467 46.9861C55.4661 47.6656 54.5438 48.0486 53.5812 48.0515H49.5309C48.6282 47.0589 48.1294 45.7656 48.1323 44.4249C48.1323 42.9822 48.7064 41.5986 49.7283 40.5784C50.7501 39.5583 52.1361 38.9851 53.5812 38.9851C54.9241 38.9821 56.2197 39.4801 57.2139 40.3813ZM9.98976 19.0391C9.98976 20.4819 9.41568 21.8655 8.39381 22.8857C7.37193 23.9058 5.98597 24.479 4.54083 24.479C3.19796 24.4818 1.90245 23.9839 0.908203 23.0827V19.0391C0.911078 18.0782 1.29472 17.1574 1.97535 16.478C2.65598 15.7985 3.57828 15.4155 4.54083 15.4126H8.5912C9.494 16.4051 9.9928 17.6985 9.98976 19.0391ZM9.98976 44.4249C9.99262 45.7656 9.49385 47.0589 8.5912 48.0515H4.54083C3.57828 48.0486 2.65598 47.6656 1.97535 46.9861C1.29472 46.3066 0.911078 45.3859 0.908203 44.4249V40.3813C1.90245 39.4802 3.19796 38.9823 4.54083 38.9851C5.98597 38.9851 7.37193 39.5583 8.39381 40.5784C9.41568 41.5986 9.98976 42.9822 9.98976 44.4249Z" fill="#9CD2B8"/>
+                  <path d="M28.1528 27.1992H29.9691C30.4509 27.1992 30.9128 27.3903 31.2535 27.7303C31.5941 28.0704 31.7855 28.5316 31.7855 29.0125C31.7855 29.253 31.8811 29.4836 32.0514 29.6536C32.2218 29.8236 32.4528 29.9192 32.6936 29.9192C32.9345 29.9192 33.1655 29.8236 33.3358 29.6536C33.5061 29.4836 33.6018 29.253 33.6018 29.0125C33.6018 28.0507 33.219 27.1283 32.5378 26.4482C31.8565 25.7681 30.9326 25.386 29.9691 25.386V24.4793C29.9691 24.2389 29.8735 24.0083 29.7031 23.8383C29.5328 23.6682 29.3018 23.5727 29.061 23.5727C28.8201 23.5727 28.5891 23.6682 28.4188 23.8383C28.2485 24.0083 28.1528 24.2389 28.1528 24.4793V25.386C27.1894 25.386 26.2654 25.7681 25.5842 26.4482C24.9029 27.1283 24.5202 28.0507 24.5202 29.0125C24.5202 29.9743 24.9029 30.8968 25.5842 31.5769C26.2654 32.257 27.1894 32.6391 28.1528 32.6391H29.9691C30.4509 32.6391 30.9128 32.8301 31.2535 33.1702C31.5941 33.5102 31.7855 33.9714 31.7855 34.4523C31.7855 34.9332 31.5941 35.3945 31.2535 35.7345C30.9128 36.0746 30.4509 36.2656 29.9691 36.2656H28.1528C27.6711 36.2656 27.2091 36.0746 26.8685 35.7345C26.5279 35.3945 26.3365 34.9332 26.3365 34.4523C26.3365 34.2119 26.2408 33.9813 26.0705 33.8112C25.9002 33.6412 25.6692 33.5457 25.4284 33.5457C25.1875 33.5457 24.9565 33.6412 24.7862 33.8112C24.6159 33.9813 24.5202 34.2119 24.5202 34.4523C24.5202 35.4142 24.9029 36.3366 25.5842 37.0167C26.2654 37.6968 27.1894 38.0789 28.1528 38.0789V38.9855C28.1528 39.226 28.2485 39.4566 28.4188 39.6266C28.5891 39.7966 28.8201 39.8921 29.061 39.8921C29.3018 39.8921 29.5328 39.7966 29.7031 39.6266C29.8735 39.4566 29.9691 39.226 29.9691 38.9855V38.0789C30.9326 38.0789 31.8565 37.6968 32.5378 37.0167C33.219 36.3366 33.6018 35.4142 33.6018 34.4523C33.6018 33.4905 33.219 32.5681 32.5378 31.888C31.8565 31.2079 30.9326 30.8258 29.9691 30.8258H28.1528C27.6711 30.8258 27.2091 30.6348 26.8685 30.2947C26.5279 29.9546 26.3365 29.4934 26.3365 29.0125C26.3365 28.5316 26.5279 28.0704 26.8685 27.7303C27.2091 27.3903 27.6711 27.1992 28.1528 27.1992ZM29.061 19.9462C26.726 19.9462 24.4434 20.6374 22.5019 21.9325C20.5604 23.2276 19.0472 25.0684 18.1536 27.222C17.2601 29.3757 17.0263 31.7455 17.4818 34.0318C17.9373 36.3181 19.0618 38.4182 20.7129 40.0666C22.364 41.7149 24.4676 42.8374 26.7577 43.2922C29.0479 43.747 31.4217 43.5136 33.579 42.6215C35.7362 41.7294 37.5801 40.2188 38.8773 38.2805C40.1746 36.3423 40.867 34.0635 40.867 31.7324C40.8632 28.6077 39.6181 25.612 37.4049 23.4025C35.1916 21.193 32.191 19.95 29.061 19.9462ZM29.061 41.7054C27.0852 41.7054 25.1538 41.1205 23.511 40.0247C21.8682 38.9288 20.5878 37.3713 19.8317 35.5489C19.0756 33.7266 18.8778 31.7214 19.2632 29.7868C19.6487 27.8522 20.6001 26.0752 21.9972 24.6805C23.3943 23.2857 25.1743 22.3359 27.1121 21.9511C29.0499 21.5663 31.0585 21.7638 32.8839 22.5186C34.7093 23.2734 36.2694 24.5517 37.3671 26.1917C38.4648 27.8318 39.0507 29.76 39.0507 31.7324C39.0478 34.3765 37.9944 36.9115 36.1216 38.7812C34.2488 40.6509 31.7095 41.7025 29.061 41.7054ZM53.5812 14.5063H4.54078C3.33649 14.5063 2.18152 14.9839 1.32996 15.8341C0.478402 16.6842 0 17.8373 0 19.0395L0 44.4253C0 45.6276 0.478402 46.7806 1.32996 47.6308C2.18152 48.4809 3.33649 48.9585 4.54078 48.9585H53.5812C54.7855 48.9585 55.9404 48.4809 56.792 47.6308C57.6436 46.7806 58.122 45.6276 58.122 44.4253V19.0395C58.122 17.8373 57.6436 16.6842 56.792 15.8341C55.9404 14.9839 54.7855 14.5063 53.5812 14.5063ZM1.81631 19.0395C1.81631 18.3182 2.10335 17.6263 2.61429 17.1163C3.12523 16.6062 3.81821 16.3196 4.54078 16.3196H8.14252C8.74712 17.0982 9.07722 18.0544 9.08156 19.0395C9.08156 20.2418 8.60316 21.3948 7.7516 22.245C6.90003 23.0951 5.74507 23.5727 4.54078 23.5727C3.55398 23.5684 2.59623 23.2388 1.81631 22.6352V19.0395ZM8.14252 47.1452H4.54078C3.81821 47.1452 3.12523 46.8587 2.61429 46.3486C2.10335 45.8385 1.81631 45.1467 1.81631 44.4253V40.8296C2.59623 40.226 3.55398 39.8965 4.54078 39.8921C5.74507 39.8921 6.90003 40.3698 7.7516 41.2199C8.60316 42.07 9.08156 43.2231 9.08156 44.4253C9.07722 45.4105 8.74712 46.3666 8.14252 47.1452ZM56.3057 44.4253C56.3057 45.1467 56.0186 45.8385 55.5077 46.3486C54.9967 46.8587 54.3038 47.1452 53.5812 47.1452H49.9794C49.3749 46.3666 49.0448 45.4105 49.0404 44.4253C49.0404 43.2231 49.5188 42.07 50.3704 41.2199C51.2219 40.3698 52.3769 39.8921 53.5812 39.8921C54.568 39.8965 55.5257 40.226 56.3057 40.8296V44.4253ZM56.3057 38.7226C55.4575 38.3065 54.5262 38.0864 53.5812 38.0789C51.8952 38.0789 50.2782 38.7475 49.0861 39.9377C47.8939 41.1279 47.2241 42.7421 47.2241 44.4253C47.2317 45.3688 47.4521 46.2985 47.8689 47.1452H10.2531C10.6699 46.2985 10.8903 45.3688 10.8979 44.4253C10.8979 42.7421 10.2281 41.1279 9.03592 39.9377C7.84374 38.7475 6.22678 38.0789 4.54078 38.0789C3.59572 38.0864 2.66451 38.3065 1.81631 38.7226V24.7423C2.66451 25.1584 3.59572 25.3784 4.54078 25.386C6.22678 25.386 7.84374 24.7173 9.03592 23.5271C10.2281 22.337 10.8979 20.7227 10.8979 19.0395C10.8903 18.0961 10.6699 17.1664 10.2531 16.3196H47.8689C47.4521 17.1664 47.2317 18.0961 47.2241 19.0395C47.2241 20.7227 47.8939 22.337 49.0861 23.5271C50.2782 24.7173 51.8952 25.386 53.5812 25.386C54.5262 25.3784 55.4575 25.1584 56.3057 24.7423V38.7226ZM56.3057 22.6352C55.5257 23.2388 54.568 23.5684 53.5812 23.5727C52.3769 23.5727 51.2219 23.0951 50.3704 22.245C49.5188 21.3948 49.0404 20.2418 49.0404 19.0395C49.0448 18.0544 49.3749 17.0982 49.9794 16.3196H53.5812C54.3038 16.3196 54.9967 16.6062 55.5077 17.1163C56.0186 17.6263 56.3057 18.3182 56.3057 19.0395V22.6352Z" fill="black"/>
+                  </g>
+                  <defs>
+                  <clipPath id="clip0_1008_491">
+                  <rect width="58.122" height="58.0247" fill="white"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+
+            </div>
+            <div class="flex-1">
+              <h3 class="font-semibold text-slate-900 text-sm">Cash Payment</h3>
+              <p class="text-xs text-slate-500">Default Method</p>
+            </div>
+            <span class="w-6 h-6 rounded-md border-2 border-gray-300 flex items-center justify-center peer-checked:bg-blue-600 peer-checked:border-blue-600 text-transparent peer-checked:text-white transition-all duration-150 ease">
+              <i class="ph-fill ph-check text-sm"></i>
+            </span>
+          </label>
+
+          <!-- CHOOSE METHOD -->
+          <h2 class="text-sm font-semibold text-[#000000] mb-3">Choose the payment method you'd like to use</h2>
+
+          <div class="flex flex-col gap-4 mb-6">
+
+            <label class="flex items-center gap-5 px-5 py-4 bg-white shadow-md cursor-pointer">
+              <input type="checkbox" name="payment-method" value="mastercard" id="pm-mastercard" class="hidden peer">
+              <div class="w-11 h-11 rounded-lg bg-orange-50 flex items-center justify-center">
+                <div class="flex -space-x-2">
+                  <svg width="61" height="40" viewBox="0 0 61 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M35.0014 20.001C35.0014 31.0443 27.1665 40 17.5015 40C7.83489 40 0 31.0462 0 20.001C0 8.95381 7.83489 0 17.5015 0C27.1648 0 35.0014 8.95381 35.0014 20.001Z" fill="#F72000"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M60.0629 20.001C60.0629 31.0443 52.228 40 42.5631 40C32.8965 40 25.0615 31.0462 25.0615 20.001C25.0615 8.95381 32.8965 0 42.5631 0C52.2264 0 60.0629 8.95381 60.0629 20.001Z" fill="#FFBB00"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M35.0014 20.001C35.0014 31.0443 27.1665 40 17.5015 40C7.83489 40 0 31.0462 0 20.001C0 8.95381 7.83489 0 17.5015 0C27.1648 0 35.0014 8.95381 35.0014 20.001Z" fill="#F72000" fill-opacity="0.378"/>
+                  </svg>
+
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-semibold text-slate-900 text-sm">**** **** **** 8908</h3>
+                <p class="text-xs text-slate-500">Expires 07/28</p>
+              </div>
+              <span class="w-6 h-6 rounded-md border-2 border-gray-300 flex-shrink-0 flex items-center justify-center peer-checked:bg-blue-600 peer-checked:border-blue-600 text-transparent peer-checked:text-white transition-all duration-150 ease">
+                <i class="ph-fill ph-check text-sm"></i>
+              </span>
+            </label>
+
+            <label class="flex items-center gap-4 px-5 py-4 bg-white shadow-md cursor-pointer">
+              <input type="checkbox" name="payment-method" value="visa" id="pm-visa" class="hidden peer">
+              <svg width="60" height="20" viewBox="0 0 60 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24.1963 0.345815L21.149 19.6675H26.0244L29.0722 0.345815H24.1963ZM17.0468 0.345815L12.3984 13.6351L11.8485 10.7734L11.8489 10.7744L11.7277 10.133C11.1652 8.8821 9.86219 6.50468 7.40186 4.47575C6.71342 3.90959 5.98862 3.39216 5.23242 2.92703L9.45714 19.6675H14.537L22.2944 0.345815H17.0468ZM36.0751 5.70988C36.0751 3.5254 40.8235 3.8061 42.9099 4.99226L43.6056 0.842494C43.6056 0.842494 41.4584 0 39.2203 0C36.8006 0 31.0548 1.09171 31.0548 6.39629C31.0548 11.3885 37.7986 11.4506 37.7986 14.0716C37.7986 16.6926 31.7502 16.2242 29.7541 14.5708L29.0287 18.9083C29.0287 18.9083 31.2056 20 34.5327 20C37.8594 20 42.8795 18.2219 42.8795 13.3852C42.8795 8.36171 36.0751 7.89383 36.0751 5.70988ZM55.9708 0.345815H52.0508C50.2407 0.345815 49.7999 1.78575 49.7999 1.78575L42.5289 19.6675H47.6107L48.6273 16.7976H54.8256L55.3974 19.6675H59.8742L55.9708 0.345815ZM50.0324 12.8326L52.5944 5.60203L54.0356 12.8326H50.0324Z" fill="#005BAC"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.2755 2.16471C10.2755 2.16471 10.0737 0.420898 7.91918 0.420898H0.0916862L0 0.748624C0 0.748624 3.76252 1.53994 7.37218 4.50461C10.8217 7.33811 11.947 10.8702 11.947 10.8702L10.2755 2.16471Z" fill="#F6AC1D"/>
+              </svg>
+
+              <div class="flex-1">
+                <h3 class="font-semibold text-slate-900 text-sm">**** **** **** 0023</h3>
+                <p class="text-xs text-slate-500">Expires 07/24</p>
+              </div>
+              <span class="w-6 h-6 rounded-md border-2 border-gray-300 flex-shrink-0 flex items-center justify-center peer-checked:bg-blue-600 peer-checked:border-blue-600 text-transparent peer-checked:text-white transition-all duration-150 ease">
+                <i class="ph-fill ph-check text-sm"></i>
+              </span>
+            </label>
+
+            <label class="flex items-center gap-4 px-5 py-4 bg-white shadow-md cursor-pointer">
+              <input type="checkbox" name="payment-method" value="paypal" id="pm-paypal" class="hidden peer">
+              <div class="w-11 h-11 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-700">
+                <svg width="46" height="44" viewBox="0 0 46 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.671 36.5568C16.5263 37.4473 15.7403 38.1028 14.8172 38.1028H7.62512C6.0358 38.1061 4.74465 36.8504 4.74122 35.298C4.74088 35.1412 4.75396 34.9847 4.78035 34.83L9.64142 4.7518C9.9178 3.07353 11.3984 1.83802 13.1387 1.8335H24.802C29.6081 1.8335 33.0761 2.97038 35.1107 5.21191C37.0753 7.42263 37.8298 10.4221 37.138 13.2703C37.0977 13.5174 37.0573 13.7663 36.9969 14.0367C35.4517 21.7693 30.136 25.8745 21.6328 25.8745H18.4067L16.671 36.5568Z" fill="#003087"/>
+                  <path d="M38.3586 13.0251C38.0468 12.6841 37.7042 12.3728 37.3357 12.0938C37.2946 12.4872 37.2326 12.8802 37.1379 13.2703C37.0976 13.5174 37.0571 13.7663 36.9967 14.0366C35.4515 21.7692 30.1359 25.8745 21.6327 25.8745H18.4066L16.6709 36.5569C16.5262 37.4473 15.7401 38.1028 14.8171 38.1028H12.6254L12.4714 39.057C12.449 39.1957 12.4376 39.3361 12.4375 39.4766C12.4369 40.9618 13.6692 42.1663 15.1897 42.1668H21.2606C22.8854 42.1803 24.279 41.0377 24.5472 39.4723L25.7497 32.0817L25.7698 31.9816H26.3307C33.8991 31.9816 38.6264 28.3273 40.0048 21.4165C40.8576 18.5231 40.2462 15.4058 38.3586 13.0251Z" fill="#0070E0"/>
+                </svg>
+
+              </div>
+              <div class="flex-1">
+                <h3 class="font-semibold text-slate-900 text-sm">PayPal</h3>
+              </div>
+              <span class="w-6 h-6 rounded-md border-2 border-gray-300 flex-shrink-0 flex items-center justify-center peer-checked:bg-blue-600 peer-checked:border-blue-600 text-transparent peer-checked:text-white transition-all duration-150 ease">
+                <i class="ph-fill ph-check text-sm"></i>
+              </span>
+            </label>
+
+          </div>
+
+          <!-- ADD NEW CARD -->
+          <button class="w-full border shadow-md  border-[#2563EB80#2563EB80] bg-[#F2F2F2] border-gray-300 rounded-lg py-3 text-slate-400 text-sm font-medium transition-all duration-300 ease mb-6">
+            + Add New Card
+          </button>
+
+          <!-- SUBMIT -->
+           <div class="flex justify-center">
+          <button class="w-[413px]  bg-blue-600 hover:bg-blue-700 text-white font-bold tracking-wide text-sm rounded-lg py-4 transition-all duration-300 ease">
+            ADD PAYMENT METHOD
+          </button>
+          </div>
+
+        </div>
+
+      </main>
+    </div>
   </body>
 </html>
