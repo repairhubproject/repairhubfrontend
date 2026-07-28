@@ -16,6 +16,11 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css"
+    />
   </head>
   <body class="">
     <header class="w-full shadow-[0_2px_10px_rgba(0,0,0,0.08)] fixed top-0 left-0 py-3 z-50 bg-white max-md:hidden">
@@ -53,7 +58,7 @@
       </div>
     </header>
     <div class="md:flex w-full md:h-screen overflow-hidden">
-      <aside class="w-2xs border-r h-full shadow-[4px_0_12px_rgba(0,0,0,0.15)] pt-40 max-md:hidden overflow-y-auto hide-scrollbar">
+      <aside class="w-2xs border border-slate-300 h-full shadow-[0px_0px_40px_rgba(0,0,0,0.2)] pt-40 max-md:hidden overflow-y-auto hide-scrollbar mb-4">
         <nav aria-label="Main navigation" class="px-5 mb-10">
           <ul class="w-[190px] flex flex-col gap-3">
             <li class="w-full bg-[rgba(193,211,249,1)] cursor-pointer px-3 py-2 rounded-lg">
@@ -131,9 +136,12 @@
             </div>
           </div>
         </div>
+        <div class="w-full text-center text-[#C4C4C4] text-base font-semibold my-5">
+          <p>2026 Repairhub</p>
+        </div>
       </aside>
-      <main class="md:flex-1 w-full pt-5 md:pt-30 max-md:bg-[rgba(193,211,249,1)] min-h-screen overflow-y-auto hide-scrollbar">
-        <div class="w-[95%] mx-auto flex flex-col gap-7">
+      <main class="md:flex-1 pt-5 md:pt-30 mx-auto w-full max-md:bg-[rgba(193,211,249,1)] min-h-screen overflow-y-auto hide-scrollbar">
+        <div class="flex flex-col gap-10 w-[95%] mx-auto">
           <div class="w-full flex justify-between items-center">
             <div class="flex gap-3 items-center">
               <div class="w-[54px] h-[54px] bg-slate-300 rounded-full">
@@ -141,74 +149,310 @@
               </div>
               <div>
                 <h1 class="md:text-4xl text-lg text-black font-bold">Hi, John!</h1>
-                <p class="md:text-2xl text-lg text-black">what do you want to fix</p>
+                <p class="md:text-2xl text-sm text-black">what do you want to fix</p>
               </div>
             </div>
             <i class="ph ph-bell text-2xl transition-all duration-300 hover:scale-105 cursor-pointer"></i>
           </div>
           <div class="border rounded-[20px] border-[#2563EB] md:hidden px-3 flex gap-3 w-full h-[45px] items-center">
-            <i class="ph ph-magnifying-glass text-base font-bold"></i>
+            <i class="ph-bold ph-magnifying-glass text-xl font-bold"></i>
             <input type="text" placeholder="Search technicians, repairs or service....." class="flex-1">
-            <i class="ph ph-faders-horizontal font-bold text-base"></i>
+            <i class="ph-bold ph-sliders-horizontal font-bold text-xl cursor-pointer"></i>
           </div>
-          <div class="flex flex-col w-full gap-10">
-            <div class="flex justify-between">
+          <div class="flex flex-col w-full gap-5 md:gap-10">
+            <div class="flex justify-between items-center w-full">
               <h1 class="font-bold text-black text-xl md:text-2xl lg:text-4xl">Categories</h1>              
               <a href="/pages/customer/categories" class="text-[#2563EB] text-base md:text-lg space-x-2 flex items-center">
-                <span>See Profile</span> 
-                <svg class="w-[10px] md:w-[13px] h-[19px] md:h-[22px]" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.785 11.785L2.35667 21.2133L0 18.8567L8.25 10.6067L0 2.35667L2.35667 0L11.785 9.42833C12.0975 9.74088 12.273 10.1647 12.273 10.6067C12.273 11.0486 12.0975 11.4725 11.785 11.785Z" fill="#2563EB"/></svg>
+                <span class="text-sm">See Profile</span> 
+                <svg class="w-[9px] md:w-[11px] h-[19px] md:h-[22px]" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.785 11.785L2.35667 21.2133L0 18.8567L8.25 10.6067L0 2.35667L2.35667 0L11.785 9.42833C12.0975 9.74088 12.273 10.1647 12.273 10.6067C12.273 11.0486 12.0975 11.4725 11.785 11.785Z" fill="#2563EB"/></svg>
               </a>
             </div>
-            <div class="w-full flex gap-4 flex-wrap justify-between">
+            <div class="w-full flex gap-6 md:justify-between max-md:overflow-y-auto hide-scrollbar">
               <div class="w-[102px] flex flex-col gap-1 items-start">
-                <img src="../../src/assets/images/repair-categpries/Rectangle 24 (1).png" class="w-auto h-auto object-cover" alt="">
+                <img src="../../src/assets/images/repair-categpries/Rectangle 24 (1).png" class="w-auto h-20 object-cover" alt="">
                 <p class="text-sm lg:text-xl font-bold text-black">Electrical Services</p>
               </div>
               <div class="w-[102px] flex flex-col gap-1 items-start">
-                <img src="../../src/assets/images/repair-categpries/Rectangle 23 (1).png" class="w-auto h-auto object-cover" alt="">
+                <img src="../../src/assets/images/repair-categpries/Rectangle 23 (1).png" class="w-auto h-20 object-cover" alt="">
                 <p class="text-sm lg:text-xl font-bold text-black">Plumbing Services</p>
               </div>
               <div class="w-[102px] flex flex-col gap-1 items-start">
-                <img src="../../src/assets/images/repair-categpries/Rectangle 20 (1).png" class="w-auto h-auto object-cover" alt="">
+                <img src="../../src/assets/images/repair-categpries/Rectangle 20 (1).png" class="w-auto h-20 object-cover" alt="">
                 <p class="text-sm lg:text-xl font-bold text-black">Refrigerator Repair</p>
               </div>
               <div class="w-[102px] flex flex-col gap-1 items-start">
-                <img src="../../src/assets/images/repair-categpries/Rectangle 25 (1).png" class="w-auto h-auto object-cover" alt="">
+                <img src="../../src/assets/images/repair-categpries/Rectangle 25 (1).png" class="w-auto h-20 object-cover" alt="">
                 <p class="text-sm lg:text-xl font-bold text-black"> Generator Repair</p>
               </div>
               <div class="w-[102px] flex flex-col gap-1 items-start">
-                <img src="../../src/assets/images/repair-categpries/Rectangle 22 (1).png" class="w-auto h-auto object-cover" alt="">
+                <img src="../../src/assets/images/repair-categpries/Rectangle 22 (1).png" class="w-auto h-20 object-cover" alt="">
+                <p class="text-sm lg:text-xl font-bold text-black"> Electronics Repair</p>
+              </div>
+              <div class="w-[102px] flex flex-col gap-1 items-start">
+                <img src="../../src/assets/images/repair-categpries/Rectangle 22 (1).png" class="w-auto h-20 object-cover" alt="">
+                <p class="text-sm lg:text-xl font-bold text-black"> Electronics Repair</p>
+              </div>
+              <div class="w-[102px] flex flex-col gap-1 items-start">
+                <img src="../../src/assets/images/repair-categpries/Rectangle 22 (1).png" class="w-auto h-20 object-cover" alt="">
                 <p class="text-sm lg:text-xl font-bold text-black"> Electronics Repair</p>
               </div>
             </div>
           </div>
-          <div class="w-full bg-[url('../../src/assets/images/Frame 249.png')] bg-cover bg-center bg-no-repeat h-[80px]">
+          <div class="w-full h-[150px] rounded-[20px] overflow-hidden">
+            <img src="../../src/assets/images/Frame-249.png" class="w-full h-full object-cover" alt="">
+          </div>
+          <div class="w-full flex flex-col gap-5 md:gap-10 mb-20 md:mb-10">
+            <div class="flex justify-between items-center">
+              <h1 class="font-bold text-black text-xl md:text-2xl lg:text-4xl">Nearby Technicians</h1>              
+              <a href="/pages/customer/categories" class="text-[#2563EB] text-base md:text-lg space-x-1 flex items-center">
+                <span class="text-sm">See Profile</span> 
+                <svg class="w-[9px] md:w-[11px] h-[19px] md:h-[22px]" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.785 11.785L2.35667 21.2133L0 18.8567L8.25 10.6067L0 2.35667L2.35667 0L11.785 9.42833C12.0975 9.74088 12.273 10.1647 12.273 10.6067C12.273 11.0486 12.0975 11.4725 11.785 11.785Z" fill="#2563EB"/></svg>
+              </a>
+            </div>
+            <div class="flex flex-col gap-3">
+              <div class="flex items-center justify-between rounded-2xl bg-white px-2 md:px-4 py-4 gap-3 shadow-[0_5px_8px_rgba(0,0,0,0.3)] transition-shadow duration-300 hover:shadow-[0_6px_18px_rgba(0,0,0,0.15)]">
+    
+                  <!-- Left -->
+                  <div class="flex items-center gap-4">
+    
+                      <!-- Avatar -->
+                      <div class="relative">
+    
+                          <img
+                              src="../../src/assets/images/technician.png"
+                              alt="Technician"
+                              class="md:h-[94px] md:w-[94px] w-16 h-16 rounded-full object-cover">
+    
+                          <!-- Online indicator -->
+                          <span
+                              class="absolute bottom-1 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-green-500">
+                          </span>
+    
+                      </div>
+    
+                      <!-- Info -->
+                      <div>
+    
+                          <h3 class="text-[18px] md:text-3xl font-bold text-black">
+                              Ola Tunde
+                          </h3>
+    
+                          
+                          <div class="flex-col flex gap-1 text-xs text-black">
+                            
+                              <p class="text-sm md:text-lg font-medium text-black">
+                                  Plumbing Specialist
+                              </p>
+
+                              <div class="flex items-center gap-1">
+                                  <i class="ph-fill ph-star text-[12px] text-yellow-400"></i>
+                                  <span>4.1</span>
+                                  <span>(110 reviews)</span>
+                              </div>
+    
+                              <div class="flex items-center gap-1">
+                                  <i class="ph ph-map-pin text-[12px]"></i>
+                                  <span>12 km away</span>
+                              </div>
+    
+                          </div>
+    
+                      </div>
+    
+                  </div>
+    
+                  <!-- Right -->
+                  <div class="flex flex-col justify-between gap-5">
+    
+                      <span
+                          class="rounded-full bg-blue-50 px-3 py-1 text-xs text-center font-semibold text-blue-600 shadow-[0_8px_8px_rgba(0,0,0,0.3)]">
+                          Available
+                      </span>
+    
+                      <a
+                          href="/pages/customer/technician-profile.html"
+                          class="flex items-center gap-1 text-xs md:text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700">
+    
+                          See Profile
+    
+                          <i class="ph ph-caret-right md:text-xs "></i>
+    
+                      </a>
+    
+                  </div>
+    
+              </div>
+              <div class="flex items-center justify-between rounded-2xl bg-white px-2 md:px-4 py-4 gap-3 shadow-[0_5px_8px_rgba(0,0,0,0.3)] transition-shadow duration-300 hover:shadow-[0_6px_18px_rgba(0,0,0,0.15)]">
+    
+                  <!-- Left -->
+                  <div class="flex items-center gap-4">
+    
+                      <!-- Avatar -->
+                      <div class="relative">
+    
+                          <img
+                              src="../../src/assets/images/technician.png"
+                              alt="Technician"
+                              class="md:h-[94px] md:w-[94px] w-16 h-16 rounded-full object-cover">
+    
+                          <!-- Online indicator -->
+                          <span
+                              class="absolute bottom-1 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-green-500">
+                          </span>
+    
+                      </div>
+    
+                      <!-- Info -->
+                      <div>
+    
+                          <h3 class="text-[18px] md:text-3xl font-bold text-black">
+                              Ola Tunde
+                          </h3>
+    
+                          
+                          <div class="flex-col flex gap-1 text-xs text-black">
+                            
+                              <p class="text-sm md:text-lg font-medium text-black">
+                                  Plumbing Specialist
+                              </p>
+
+                              <div class="flex items-center gap-1">
+                                  <i class="ph-fill ph-star text-[12px] text-yellow-400"></i>
+                                  <span>4.1</span>
+                                  <span>(110 reviews)</span>
+                              </div>
+    
+                              <div class="flex items-center gap-1">
+                                  <i class="ph ph-map-pin text-[12px]"></i>
+                                  <span>12 km away</span>
+                              </div>
+    
+                          </div>
+    
+                      </div>
+    
+                  </div>
+    
+                  <!-- Right -->
+                  <div class="flex flex-col justify-between gap-5">
+    
+                      <span
+                          class="rounded-full bg-blue-50 px-3 py-1 text-xs text-center font-semibold text-blue-600 shadow-[0_8px_8px_rgba(0,0,0,0.3)]">
+                          Available
+                      </span>
+    
+                      <a
+                          href="/pages/customer/technician-profile.html"
+                          class="flex items-center gap-1 text-xs md:text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700">
+    
+                          See Profile
+    
+                          <i class="ph ph-caret-right md:text-xs "></i>
+    
+                      </a>
+    
+                  </div>
+    
+              </div>
+              <div class="flex items-center justify-between rounded-2xl bg-white px-2 md:px-4 py-4 gap-3 shadow-[0_5px_8px_rgba(0,0,0,0.3)] transition-shadow duration-300 hover:shadow-[0_6px_18px_rgba(0,0,0,0.15)]">
+    
+                  <!-- Left -->
+                  <div class="flex items-center gap-4">
+    
+                      <!-- Avatar -->
+                      <div class="relative">
+    
+                          <img
+                              src="../../src/assets/images/technician.png"
+                              alt="Technician"
+                              class="md:h-[94px] md:w-[94px] w-16 h-16 rounded-full object-cover">
+    
+                          <!-- Online indicator -->
+                          <span
+                              class="absolute bottom-0 right-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-green-500">
+                          </span>
+    
+                      </div>
+    
+                      <!-- Info -->
+                      <div>
+    
+                          <h3 class="text-[18px] md:text-3xl font-bold text-black">
+                              Ola Tunde
+                          </h3>
+    
+                          
+                          <div class="flex-col flex gap-1 text-xs text-black">
+                            
+                              <p class="text-sm md:text-lg font-medium text-black">
+                                  Plumbing Specialist
+                              </p>
+
+                              <div class="flex items-center gap-1">
+                                  <i class="ph-fill ph-star text-[12px] text-yellow-400"></i>
+                                  <span>4.1</span>
+                                  <span>(110 reviews)</span>
+                              </div>
+    
+                              <div class="flex items-center gap-1">
+                                  <i class="ph ph-map-pin text-[12px]"></i>
+                                  <span>12 km away</span>
+                              </div>
+    
+                          </div>
+    
+                      </div>
+    
+                  </div>
+    
+                  <!-- Right -->
+                  <div class="flex flex-col justify-between gap-5">
+    
+                      <span
+                          class="rounded-full bg-blue-50 px-3 py-1 text-xs text-center font-semibold text-blue-600 shadow-[0_8px_8px_rgba(0,0,0,0.3)]">
+                          Available
+                      </span>
+    
+                      <a
+                          href="/pages/customer/technician-profile.html"
+                          class="flex items-center gap-1 text-xs md:text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700">
+    
+                          See Profile
+    
+                          <i class="ph ph-caret-right md:text-xs "></i>
+    
+                      </a>
+    
+                  </div>
+    
+              </div>
+            </div>
           </div>
         </div>
       </main>
     </div>
-    <nav class="fixed bottom-0 left-0 right-0 z-50 flex h-16 items-center justify-around border-t border-gray-200 bg-white shadow-[0_-4px_12px_rgba(0,0,0,0.08)] md:hidden" aria-label="Bottom navigation">
+    <nav class="fixed bottom-0 left-0 right-0 z-50 flex px-1 h-16 items-center justify-around gap-5 border-t border-gray-200 bg-white shadow-[0_-4px_12px_rgba(0,0,0,0.08)] md:hidden" aria-label="Bottom navigation">
       <a href="/pages/customer/dashboard.html" class="flex flex-col items-center gap-1 text-blue-600">
         <i class="ph-fill ph-house text-xl"></i>
         <span class="text-xs">Home</span>
       </a>
 
-      <a href="/pages/customer/Categories.html" class="flex flex-col items-center gap-1 text-gray-500 hover:text-blue-600">
+      <a href="/pages/customer/Categories.html" class="text-center flex flex-col items-center gap-1 text-gray-500 hover:text-blue-600">
         <i class="ph-fill ph-user text-xl"></i>
         <span class="text-xs">Technician profile</span>
       </a>
 
-      <a href="/pages/customer/Request.html" class="flex flex-col items-center gap-1 text-gray-500 hover:text-blue-600">
+      <a href="/pages/customer/Request.html" class="text-center flex flex-col items-center gap-1 text-gray-500 hover:text-blue-600">
         <i class="ph-fill ph-calendar-blank text-xl"></i>
         <span class="text-xs">Bookings</span>
       </a>
 
-      <a href="/pages/customer/Message.html" class="flex flex-col items-center gap-1 text-gray-500 hover:text-blue-600">
+      <a href="/pages/customer/Message.html" class="text-center flex flex-col items-center gap-1 text-gray-500 hover:text-blue-600">
         <i class="ph-fill ph-bell-simple text-xl"></i>
         <span class="text-xs">Notifications</span>
       </a>
 
-      <a href="/pages/customer/profile.html" class="flex flex-col items-center gap-1 text-gray-500 hover:text-blue-600">
+      <a href="/pages/customer/profile.html" class="text-center flex flex-col items-center gap-1 text-gray-500 hover:text-blue-600">
         <i class="ph-fill ph-user text-xl"></i>
         <span class="text-xs">Profile</span>
       </a>
