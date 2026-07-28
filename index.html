@@ -31,13 +31,21 @@
           </div>
           <span class="font-semibold text-black lg:text-2xl text-lg">RepairHub</span>
         </div>
-        <div class="hidden search-box md:flex md:w-xs border border-[rgba(0,0,0,0.4)] px-2 rounded-lg h-12 items-center">
-          <input type="text" placeholder="Search for a service" class="w-full h-full outline-none">
-          <i class="ph ph-magnifying-glass text-lg"></i>
+        <button class="hidden md:flex py-2 px-4 md:px-5 rounded-lg text-[#000000/80] text-sm md:text-base font-medium hover:bg-slate-300 transition-colors duration-300 active:scale-95 cursor-pointer">
+          find a technician
+        </button>
+
+        <div class="hidden md:flex gap-3 max-md:justify-center items-center">
+          <a href="/pages/auth/login.html" class="bg-white px-5 py-2 rounded-2xl shadow-[0_5px_15px_rgba(0,0,0,0.2)] transition-all border border-[#2563EB] duration-300 hover:shadow-[0_6px_18px_rgba(0,0,0,0.15)] text-sm md:text-base text-[#2563EB] font-bold active:scale-95">
+            Login
+          </a>
+          <a href="/pages/auth/login.html" class="bg-[#2563EB] px-5 py-2 rounded-2xl shadow-[0_5px_15px_rgba(0,0,0,0.2)] transition-all duration-300 hover:shadow-[0_6px_18px_rgba(0,0,0,0.15)] text-sm md:text-base text-white font-bold active:scale-95 border border-[#2563EB]">
+            Get started
+          </a>
         </div>
 
         <!-- desktop navigation -->
-        <nav aria-label="Main navigation" class="hidden md:flex">
+        <nav aria-label="Main navigation" class="hidden">
           <ul class="text-base text-black flex gap-4 font-medium">
             <li><a href="/pages/customer/dashboard.html" class="cursor-pointer hover:text-[rgba(37,99,235,1)] transition-colors duration-300 ease">Home</a></li>
             <li><a href="/contact.html" class="cursor-pointer hover:text-[rgba(37,99,235,1)] transition-colors duration-300 ease">contact</a></li>
@@ -49,7 +57,21 @@
 
         <!-- mobile navigation -->
         <nav aria-label="Main navigation" id="mobile-menu" class="hidden md:hidden absolute px-4 py-5 top-full left-0 w-full bg-white shadow-lg">
-          <ul class="text-base text-black flex gap-4 font-medium flex flex-col gap-3">
+          <div class="flex flex-col gap-3">
+            <button class="py-2 px-4 md:px-5 rounded-lg text-[#000000/80] text-sm md:text-base font-medium hover:bg-slate-300 transition-colors duration-300 active:scale-95 cursor-pointer text-left w-fit">
+              find a technician
+            </button>
+            <div class="flex gap-3 items-center w-full">
+              <a href="/pages/auth/login.html" class="bg-white px-5 py-3 flex-1 rounded-2xl shadow-[0_5px_15px_rgba(0,0,0,0.2)] transition-all border border-[#2563EB] duration-300 hover:shadow-[0_6px_18px_rgba(0,0,0,0.15)] text-sm md:text-base text-[#2563EB] font-bold active:scale-95 text-center">
+                Login
+              </a>
+              <a href="/pages/auth/login.html" class="bg-[#2563EB] px-5 py-3 flex-1 rounded-2xl shadow-[0_5px_15px_rgba(0,0,0,0.2)] transition-all duration-300 hover:shadow-[0_6px_18px_rgba(0,0,0,0.15)] text-sm md:text-base text-white font-bold active:scale-95 border border-[#2563EB] text-center">
+                Get started
+              </a>
+            </div>
+
+          </div>
+          <ul class="text-base text-black flex gap-4 font-medium flex flex-col gap-3 hidden">
             <li><a href="/pages/customer/dashboard.html" class="cursor-pointer hover:text-[rgba(37,99,235,1)] transition-colors duration-300 ease">Home</a></li>
             <li><a href="/contact.html" class="cursor-pointer hover:text-[rgba(37,99,235,1)] transition-colors duration-300 ease">contact</a></li>
             <li><a href="/about.html" class="cursor-pointer hover:text-[rgba(37,99,235,1)] transition-colors duration-300 ease">about</a></li>
@@ -57,13 +79,12 @@
             
           </ul>
         </nav>
-        <div class="flex gap-3 items-center md:hidden" id="menu-btn" aria-label="Toggle menu">
-          <i class="ph ph-magnifying-glass text-xl cursor-pointer"></i>
-          <i class="ph-bold ph-list text-2xl cursor-pointer" id="menu-icon"></i>
+        <div class="flex gap-3 items-center md:hidden" id="menu-btn">
+          <i class="ph-bold ph-list text-2xl cursor-pointer" aria-label="Toggle menu" id="menu-icon"></i>
         </div>
       </div>
     </header>
-    <main class="min-h-screen md:pt-30 pt-20 max-w-5xl w-[95%] mx-auto overflow-hidden">
+    <main class="min-h-screen md:pt-30 pt-20 max-w-6xl w-[95%] mx-auto overflow-hidden">
       <div class="text-[rgba(37,99,235,1)] flex justify-center text-sm text-center mb-7">
         <p class="bg-[#E4ECFF] w-fit py-2 px-4 rounded-lg">Nigeria's #1 Appliance Repair Platform</p>
       </div>
@@ -77,16 +98,16 @@
             </div>
             <p class="text-sm md:text-lg">Connect with trusted technicians near you for fast, affordable, and professional home appliance repairs.</p>
           </div>
-          <div class="flex gap-3 max-md:justify-center">
-            <a href="/pages/technician/login.html" class="bg-[#2563EB] sm:px-7 sm:py-4 py-2 px-4 rounded-2xl shadow-[0_8px_15px_rgba(0,0,0,0.3)] transition-all duration-300 hover:shadow-[0_6px_18px_rgba(0,0,0,0.15)] text-base md:text-xl text-white font-bold active:scale-95">
+          <div class="flex gap-3 max-md:justify-center max-sm:flex-col">
+            <a href="/pages/auth/login.html" class="bg-[#2563EB] sm:px-7 py-4 px-4 rounded-2xl shadow-[0_5px_15px_rgba(0,0,0,0.2)] transition-all duration-300 hover:shadow-[0_6px_18px_rgba(0,0,0,0.15)] text-base md:text-xl text-white font-bold active:scale-95">
               Book a Tecnician
             </a>
-            <a href="/pages/technician/login.html" class="bg-white sm:px-7 sm:py-4 py-2 px-4 rounded-2xl shadow-[0_8px_15px_rgba(0,0,0,0.3)] transition-all border border-[#2563EB] duration-300 hover:shadow-[0_6px_18px_rgba(0,0,0,0.15)] text-base md:text-xl text-[#2563EB] font-bold active:scale-95">
+            <a href="/pages/auth/login.html" class="bg-white sm:px-7 py-4 px-4 rounded-2xl shadow-[0_5px_15px_rgba(0,0,0,0.2)] transition-all border border-[#2563EB] duration-300 hover:shadow-[0_6px_18px_rgba(0,0,0,0.15)] text-base md:text-xl text-[#2563EB] font-bold active:scale-95">
               Become a Tecnician
             </a>
           </div>
         </div>
-        <div class="md:h-[600px] bg-[url('/home-bg.png')] bg-contain bg-center rounded-lg w-1/2 bg-no-repeat mt-[-200px] hidden md:flex"></div>
+        <div class="md:h-[600px] bg-[url('/home-bg.png')] bg-contain bg-center rounded-lg w-1/2 bg-no-repeat mt-[-180px] ml-[-20px] hidden md:flex"></div>
       </div>
       <div class="w-full flex flex-wrap justify-between gap-10 mb-10 max-sm:flex-col max-sm:items-center">
         <div class="flex flex-col gap-2 items-start max-sm:items-center">
