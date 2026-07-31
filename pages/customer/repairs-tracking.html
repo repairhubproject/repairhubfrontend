@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <title>repairhubfrontend</title>
+  </head>
+  <body>
+    <div id="app">
+
+      <header class="bg-white border-b sticky top-0 z-30">
+        <div class="flex items-center justify-between px-4 py-3 gap-3">
+          <button class="md:hidden text-gray-600" onclick="document.getElementById('sidebar').classList.toggle('hidden')">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+          <a href="dashboard.html" class="flex items-center gap-2 font-bold text-blue-700 text-lg shrink-0">
+            <span class="bg-blue-700 text-white rounded-md w-8 h-8 flex items-center justify-center text-sm">RH</span>
+            <span class="hidden sm:inline">RepairHub</span>
+          </a>
+          <div class="flex-1 max-w-xl">
+            <div class="relative">
+              <input type="text" placeholder="Search for a service"
+                class="w-full border border-gray-300 rounded-full py-2 pl-4 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+              <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"/></svg>
+            </div>
+          </div>
+          <img src="https://via.placeholder.com/32" class="w-8 h-8 rounded-full shrink-0" alt="profile">
+        </div>
+      </header>
+
+      <div class="flex">
+        <aside id="sidebar" class="hidden md:flex md:flex-col w-60 bg-white border-r min-h-screen p-4 shrink-0">
+          <nav class="flex flex-col gap-1 text-sm">
+            <a href="dashboard.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Dashboard</a>
+            <a href="search.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Search</a>
+            <a href="repairs.html" class="px-3 py-2 rounded-lg bg-blue-50 text-blue-700 font-medium">Repairs</a>
+            <a href="booking.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Bookings</a>
+            <a href="categories.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Categories</a>
+          </nav>
+        </aside>
+
+        <main class="flex-1 p-4 sm:p-6 max-w-4xl">
+          <a href="repairs.html" class="text-sm text-gray-500 flex items-center gap-1 mb-4 hover:text-blue-700">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            Repair Details
+          </a>
+
+          <h1 class="text-xl font-bold mb-4">Repair Tracking</h1>
+
+          <div class="bg-white border rounded-xl p-4 flex flex-col sm:flex-row sm:justify-between gap-2 mb-6">
+            <div>
+              <p class="text-xs text-gray-400">Repair ID</p>
+              <p id="repairId" class="font-medium text-sm">#RPR-2026-00123</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400">Device</p>
+              <p id="deviceName" class="font-medium text-sm">MacBook Pro 14" (2023)</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400">Issue</p>
+              <p id="issueName" class="font-medium text-sm">Screen Flickering</p>
+            </div>
+          </div>
+
+          <div class="bg-white border rounded-xl p-4 sm:p-6 mb-4">
+            <h2 class="font-semibold text-sm mb-4">Repair Status</h2>
+            <div id="statusStepper" class="flex overflow-x-auto gap-4 pb-2">
+              <!-- TODO: toggle "completed"/"active"/"pending" states dynamically based on real repair status -->
+              <div class="step flex flex-col items-center text-center w-20 shrink-0" data-state="completed">
+                <div class="step-icon w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center mb-1">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <p class="text-xs font-medium">1. Requested</p>
+                <p class="text-[10px] text-gray-400">May 19, 10:30AM</p>
+              </div>
+              <div class="step flex flex-col items-center text-center w-20 shrink-0" data-state="completed">
+                <div class="step-icon w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center mb-1">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                </div>
+                <p class="text-xs font-medium">2. Assigned</p>
+                <p class="text-[10px] text-gray-400">May 19, 2:15PM</p>
+              </div>
+              <div class="step flex flex-col items-center text-center w-20 shrink-0" data-state="active">
+                <div class="step-icon w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center mb-1">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <p class="text-xs font-medium text-blue-700">3. In Progress</p>
+                <p class="text-[10px] text-gray-400">May 20, 9:40AM</p>
+              </div>
+              <div class="step flex flex-col items-center text-center w-20 shrink-0" data-state="pending">
+                <div class="step-icon w-10 h-10 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center mb-1">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/></svg>
+                </div>
+                <p class="text-xs font-medium text-gray-400">4. Pending Parts</p>
+              </div>
+              <div class="step flex flex-col items-center text-center w-20 shrink-0" data-state="pending">
+                <div class="step-icon w-10 h-10 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center mb-1">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <p class="text-xs font-medium text-gray-400">5. Quality Check</p>
+              </div>
+              <div class="step flex flex-col items-center text-center w-20 shrink-0" data-state="pending">
+                <div class="step-icon w-10 h-10 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center mb-1">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <p class="text-xs font-medium text-gray-400">6. Fixed/Resolved</p>
+              </div>
+            </div>
+
+            <div id="currentStatusBanner" class="mt-4 bg-blue-50 text-blue-700 text-sm rounded-lg px-4 py-2 font-medium">
+              The technician is actively working on the repair
+            </div>
+          </div>
+
+          <div class="bg-white border rounded-xl p-4 sm:p-6 mb-4 grid grid-cols-2 gap-y-3 text-sm">
+            <div>
+              <p class="text-xs text-gray-400">Priority</p>
+              <p class="font-medium">Medium</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400">Assigned Technician</p>
+              <p class="font-medium">Davine Johnson</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400">Repair Center</p>
+              <p class="font-medium">Lagos service center</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400">Warranty</p>
+              <p class="font-medium">Warranty</p>
+            </div>
+          </div>
+
+          <div class="bg-white border rounded-xl p-4 sm:p-6 mb-4">
+            <h2 class="font-semibold text-sm mb-3">Repair Activity</h2>
+            <ul id="activityLog" class="space-y-4 text-sm">
+              <!-- TODO: newest entries prepended dynamically as repair progresses -->
+              <li>
+                <p class="font-medium">May 20, 2026 9:AM</p>
+                <p class="text-gray-500 text-xs">A Technician started working on your repairs</p>
+              </li>
+              <li>
+                <p class="font-medium">May 19, 2026 2:05PM</p>
+                <p class="text-gray-500 text-xs">Technician (Davine Johnson) was assigned to you.</p>
+              </li>
+              <li>
+                <p class="font-medium">May 19, 2026 12:30PM</p>
+                <p class="text-gray-500 text-xs">Repair request submitted</p>
+              </li>
+            </ul>
+          </div>
+
+          <button class="w-full sm:w-auto flex items-center justify-center gap-2 bg-blue-700 text-white px-5 py-3 rounded-lg text-sm font-medium hover:bg-blue-800">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 10a8 8 0 10-16 0c0 4.4 3.6 8 8 8"/></svg>
+            Contact Support
+          </button>
+        </main>
+      </div>
+
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
