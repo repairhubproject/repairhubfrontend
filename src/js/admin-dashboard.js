@@ -1,30 +1,15 @@
 // REPAIRHUB ADMIN DASHBOARD
 
+import Chart from "chart.js/auto";
+import { requireAdmin, renderAdminLayout } from "./components/admin-layout.js";
 
-// SIDEBAR MOBILE MENU
+requireAdmin();
 
-const menuButton = document.getElementById("menuButton");
-const sidebar = document.getElementById("sidebar");
-const sidebarOverlay = document.getElementById("sidebarOverlay");
-
-
-menuButton.addEventListener("click", function () {
-
-    sidebar.classList.remove("-translate-x-full");
-
-    sidebarOverlay.classList.remove("hidden");
-
+renderAdminLayout({
+    active: "dashboard",
+    pageTitle: "Admin Command Center",
+    pageSubtitle: "Real-time overview of Nigeria's #1 repair marketplace.",
 });
-
-
-sidebarOverlay.addEventListener("click", function () {
-
-    sidebar.classList.add("-translate-x-full");
-
-    sidebarOverlay.classList.add("hidden");
-
-});
-
 
 
 // REVENUE CHART
