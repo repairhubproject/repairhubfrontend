@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RepairHub - Choose Role</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(160deg, #3b5bdb 0%, #7ea6f2 35%, #bfe3fb 70%, #8fd6f7 100%);
+  }
+  .role-card {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .role-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
+</style>
+</head>
+<body class="min-h-screen flex items-center justify-center py-10 px-4">
+
+  <div class="w-full max-w-md bg-gradient-to-b from-white to-blue-50  shadow-xl px-8 py-8">
+
+    <!-- Logo -->
+     <div class="flex items-center justify-center mt-8 mb-8 gap-5">
+          <div class="w-[30px] h-[30px] lg:w-[60px] lg:h-[60px]">
+            <img src="../../src/assets/images/logo.png" alt="" class="object-fit w-full h-full">
+          </div>
+          <span class="font-semibold text-black lg:text-2xl text-lg">RepairHub</span>
+        </div>
+
+    <h1 class="text-2xl font-bold text-center text-gray-900 mb-1">Welcome!</h1>
+    <p class="text-center text-gray-500 mb-8">Choose how you want to continue</p>
+
+    <div class="space-y-4">
+
+      <!-- Customer -->
+      <button data-role="customer" class="role-card w-full text-left bg-white border border-gray-100 rounded-2xl p-4 flex items-center gap-4 shadow-sm">
+        <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="9" cy="7" r="3"/>
+            <circle cx="17" cy="7" r="3"/>
+            <path d="M2 19c0-3 3-5 7-5s7 2 7 5"/>
+            <path d="M13 14c3.5 0 6 2 6 5"/>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <h3 class="font-bold text-gray-900">Continue as Customer</h3>
+          <p class="text-gray-500 text-sm mt-0.5">Book trusted repair services for your devices.</p>
+        </div>
+        <svg class="w-5 h-5 text-gray-800 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <!-- Technician -->
+      <button data-role="technician" class="role-card w-full text-left bg-white border border-gray-100 rounded-2xl p-4 flex items-center gap-4 shadow-sm">
+        <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="9" cy="6" r="2.5"/>
+            <path d="M4 13c0-2.5 2.2-4 5-4s5 1.5 5 4"/>
+            <path d="M14.7 15.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a4 4 0 01-5.29 5.29l-4.6 4.6a1.41 1.41 0 01-2-2l4.6-4.6a4 4 0 015.29-5.29l-3.76 3.77z"/>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <h3 class="font-bold text-gray-900">Continue as Technician</h3>
+          <p class="text-gray-500 text-sm mt-0.5">Offer your repair services and get more jobs.</p>
+        </div>
+        <svg class="w-5 h-5 text-gray-800 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <!-- Admin -->
+      <button data-role="admin" id="adminCard" class="role-card w-full text-left bg-blue-100 border border-blue-200 rounded-2xl p-4 flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0">
+          <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="10" cy="8" r="3"/>
+            <path d="M4 20c0-3.5 2.7-6 6-6"/>
+            <circle cx="18" cy="16" r="3"/>
+            <path d="M18 13.2v-.7M18 19.5v-.7M15.5 14.5l.6-.35M19.9 17.85l.6-.35M15.5 17.5l.6.35M19.9 14.15l.6.35"/>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <h3 class="font-bold text-gray-900">Admin Login</h3>
+          <p class="text-gray-600 text-sm mt-0.5">Access the admin dashboard and manage the platform.</p>
+        </div>
+        <svg class="w-5 h-5 text-gray-800 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="text-center mt-8">
+      <p class="text-gray-500 text-sm">Don't know which to choose?</p>
+      <a href="#" id="learnMoreLink" class="text-blue-600 font-semibold text-sm hover:underline">Learn more about roles</a>
+    </div>
+  </div>
+
+<script src="admin-reg-screen.js"></script>
+</body>
+</html>
