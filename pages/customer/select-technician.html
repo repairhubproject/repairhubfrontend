@@ -1,55 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Select Technician - RepairHub</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css"
+    />
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Main CSS -->
-    <link rel="stylesheet" href="../../src/style.css">
-</head>
+    <link rel="stylesheet" href="../../src/style.css" />
+  </head>
 
-
-<body class="bg-white text-black">
-
-      
-
-     <header class="w-full shadow-[0_2px_10px_rgba(0,0,0,0.08)]  top-0 left-0 py-3 z-50 bg-white max-md:hidden">
-      <div class="flex justify-between gap-7 max-w-7xl mx-auto items-center w-[95%]">
+  <body class="bg-white text-black">
+    <header
+      class="w-full shadow-[0_2px_10px_rgba(0,0,0,0.08)] top-0 left-0 py-3 z-50 bg-white max-md:hidden"
+    >
+      <div
+        class="flex justify-between gap-7 max-w-7xl mx-auto items-center w-[95%]"
+      >
         <div class="flex items-center gap-5">
           <div class="w-[35px] h-[34px] lg:w-[65px] lg:h-[64px]">
-            <img src="../../src/assets/images/logo.png" alt="" class="object-fit w-full h-full">
+            <img
+              src="../../src/assets/images/logo.png"
+              alt=""
+              class="object-fit w-full h-full"
+            />
           </div>
-          <span class="font-semibold text-black lg:text-2xl text-lg">RepairHub</span>
+          <span class="font-semibold text-black lg:text-2xl text-lg"
+            >RepairHub</span
+          >
         </div>
-        <div class="search-box flex md:w-xs lg:w-xl border border-[rgba(0,0,0,0.4)] px-2 rounded-lg h-12 items-center">
-          <input type="text" placeholder="Search for a service" class="w-full h-full outline-none">
+        <div
+          class="search-box flex md:w-xs lg:w-xl border border-[rgba(0,0,0,0.4)] px-2 rounded-lg h-12 items-center"
+        >
+          <input
+            type="text"
+            placeholder="Search for a service"
+            class="w-full h-full outline-none"
+          />
           <i class="ph ph-magnifying-glass text-lg"></i>
         </div>
 
-         <nav aria-label="Main navigation">
+        <nav aria-label="Main navigation">
           <ul class="text-base text-black flex gap-4 font-medium">
-            <li><a href="/pages/customer/dashboard.html" class="cursor-pointer hover:text-[rgba(37,99,235,1)] transition-colors duration-300 ease">Home</a></li>
-            <li><a href="/pages/customer/Categories.html" class="cursor-pointer hover:text-[rgba(37,99,235,1)] transition-colors duration-300 ease">Categories</a></li>
-            <li><a href="/pages/customer/Request.html" class="cursor-pointer hover:text-[rgba(37,99,235,1)] transition-colors duration-300 ease">Request</a></li>
-            <li><a href="/pages/customer/Message.html" class="cursor-pointer hover:text-[rgba(37,99,235,1)] transition-colors duration-300 ease">Message</a></li>
-            
+            <li>
+              <a
+                href="/pages/customer/dashboard.html"
+                class="cursor-pointer hover:text-[rgba(37,99,235,1)] transition-colors duration-300 ease"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="/pages/customer/Categories.html"
+                class="cursor-pointer hover:text-[rgba(37,99,235,1)] transition-colors duration-300 ease"
+                >Categories</a
+              >
+            </li>
+            <li>
+              <a
+                href="/pages/customer/Request.html"
+                class="cursor-pointer hover:text-[rgba(37,99,235,1)] transition-colors duration-300 ease"
+                >Request</a
+              >
+            </li>
+            <li>
+              <a
+                href="/pages/customer/Message.html"
+                class="cursor-pointer hover:text-[rgba(37,99,235,1)] transition-colors duration-300 ease"
+                >Message</a
+              >
+            </li>
           </ul>
-        </nav> 
+        </nav>
 
         <div class="flex items-center gap-5">
-          <i class="ph ph-bell text-xl transition-all duration-300 hover:scale-105 cursor-pointer"></i>
+          <i
+            class="ph ph-bell text-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+          ></i>
           <div class="flex gap-3 items-center">
-            <div class="lg:w-[54px] lg:h-[54px] w-[44px] h-[44px] bg-slate-300 rounded-full">
-              <img src="../../src/assets/profile.png" alt="" class="h-full w-full object-fill">
+            <div
+              class="lg:w-[54px] lg:h-[54px] w-[44px] h-[44px] bg-slate-300 rounded-full"
+            >
+              <img
+                src="../../src/assets/profile.png"
+                alt=""
+                class="h-full w-full object-fill"
+              />
             </div>
             <span class="text-base text-black">John Bull</span>
           </div>
@@ -57,519 +112,332 @@
       </div>
     </header>
 
-
     <!-- MAIN LAYOUT -->
 
-    <main class="mx-auto flex min-h-screen max-w-[1280px] gap-5">
-
-
-        <!-- SIDEBAR -->
-     
-
-        <aside class="w-[300px] shrink-0 border border-gray-200 bg-white px-1 pt-20 shadow-lg">
-
-
-            <!-- SIDEBAR NAVIGATION -->
-
-            <nav class="space-y-2">
-
-
-                <!-- HOME -->
-
-                <a href="#"
-                   class="flex items-center gap-6 rounded-md px-7 py-3 text-[16px]">
-
-                    <i data-lucide="house"
-                       class="h-6 w-6 text-blue-600">
-                    </i>
-
-                    <span>
-                        Home
-                    </span>
-
-                </a>
-
-
-                <!-- CATEGORIES -->
-
-                <a href="#"
-                   class="flex items-center gap-6 px-7 py-3 text-[16px]">
-
-                    <i data-lucide="layout-grid"
-                       class="h-6 w-6 text-blue-600">
-                    </i>
-
-                    <span>
-                        Categories
-                    </span>
-
-                </a>
-
-
-                <!-- BOOKINGS -->
-
-                <a href="#"
-                   class="flex items-center gap-6 px-7 py-3 text-[16px]">
-
-                    <i data-lucide="calendar-days"
-                       class="h-6 w-6 text-blue-600">
-                    </i>
-
-                    <span>
-                        Bookings
-                    </span>
-
-                </a>
-
-
-                <!-- MESSAGE -->
-
-                <a href="#"
-                   class="flex items-center gap-6 px-7 py-3 text-[16px]">
-
-                    <i data-lucide="message-square"
-                       class="h-6 w-6 text-blue-600">
-                    </i>
-
-                    <span>
-                        Message
-                    </span>
-
-                </a>
-
-
-                <!-- NOTIFICATION -->
-
-                <a href="#"
-                   class="flex items-center gap-6 px-7 py-3 text-[16px]">
-
-                    <i data-lucide="bell"
-                       class="h-6 w-6 text-blue-600">
-                    </i>
-
-                    <span>
-                        Notification
-                    </span>
-
-                </a>
-
-
-                <!-- SAVED -->
-
-                <a href="#"
-                   class="flex items-center gap-6 px-7 py-3 text-[16px]">
-
-                    <i data-lucide="bookmark"
-                       class="h-6 w-6 text-blue-600">
-                    </i>
-
-                    <span>
-                        Saved
-                    </span>
-
-                </a>
-
-
-                <!-- PROFILE -->
-
-                <a href="#"
-                   class="flex items-center gap-6 px-7 py-3 text-[16px]">
-
-                    <i data-lucide="user-round"
-                       class="h-6 w-6 text-blue-600">
-                    </i>
-
-                    <span>
-                        Profile
-                    </span>
-
-                </a>
-
-
-                <!-- SETTINGS -->
-
-                <a href="#"
-                   class="flex items-center gap-6 px-7 py-3 text-[16px]">
-
-                    <i data-lucide="settings"
-                       class="h-6 w-6 text-blue-600">
-                    </i>
-
-                    <span>
-                        Settings
-                    </span>
-
-                </a>
-
-
-                <!-- HELP -->
-
-                <a href="#"
-                   class="flex items-center gap-6 px-7 py-3 text-[16px]">
-
-                    <i data-lucide="circle-help"
-                       class="h-6 w-6 text-blue-600">
-                    </i>
-
-                    <span>
-                        Help& support
-                    </span>
-
-                </a>
-
-
-            </nav>
-
-
-
-           
-            <!-- QUICK ACTIONS -->
-          
-
-            <div class="mt-2 rounded-lg bg-blue-50 p-1">
-
-
-                <h3 class="py-3 text-center font-semibold text-gray-500">
-                    QUICK ACTIONS
-                </h3>
-
-
-                <button
-                    class="w-full rounded-lg border border-blue-500 bg-blue-100 py-3 text-blue-500">
-
-                    Request Repair
-
-                </button>
-
-
-                <button
-                    class="mt-5 w-full border border-blue-500 bg-white py-3 text-gray-500">
-
-                    Find Technician
-
-                </button>
-
-
+    <main class="md:flex w-full md:h-screen overflow-hidden">
+      <!-- SIDEBAR -->
+
+      <aside
+        class="w-[300px] shrink-0 border border-gray-200 bg-white px-1 pt-20 shadow-lg"
+      >
+        <nav aria-label="Main navigation" class="px-5 mb-10">
+          <ul class="w-[190px] flex flex-col gap-3">
+            <li
+              class="w-full bg-[rgba(193,211,249,1)] cursor-pointer px-3 py-2 rounded-lg"
+            >
+              <a
+                href="/pages/customer/dashboard.html"
+                class="actext-base text-[rgba(37,99,235,1)] flex items-center gap-2"
+              >
+                <i class="ph-fill ph-house text-xl"></i>
+                <span class="">Home</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a
+                href="/pages/customer/dashboard.html"
+                class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2"
+              >
+                <i class="ph-fill ph-grid-four text-xl"></i>
+                <span class=" ">Categories</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a
+                href="/pages/customer/booking.html"
+                class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2"
+              >
+                <i class="ph-fill ph-calendar-blank text-xl"></i>
+                <span class=" ">Bookings</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a
+                href="/pages/customer/message"
+                class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2"
+              >
+                <i class="ph-fill ph-chat text-xl"></i>
+                <span class=" ">Message</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a
+                href="/pages/customer/notifications.html"
+                class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2"
+              >
+                <i class="ph-fill ph-bell-simple text-xl"></i>
+                <span class=" ">Notification</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a
+                href="/pages/customer/saved"
+                class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2"
+              >
+                <i class="ph-fill ph-bookmark-simple text-xl"></i>
+                <span class=" ">Saved</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a
+                href="/pages/customer/profile.html"
+                class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2"
+              >
+                <i class="ph-fill ph-user text-xl"></i>
+                <span class=" ">Profile</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a
+                href="/pages/customer/settings.html"
+                class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2"
+              >
+                <i class="ph-fill ph-gear text-xl"></i>
+                <span class=" ">Settings</span>
+              </a>
+            </li>
+            <li class="w-full cursor-pointer px-3 py-2 rounded-lg">
+              <a
+                href="/pages/customer/help.html"
+                class="text-base text-black hover:text-[rgba(37,99,235,1)] transition-all duration-300 ease flex items-center gap-2"
+              >
+                <i class="ph-fill ph-info text-xl"></i>
+                <span class=" ">Help & Support</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="px-1 flex flex-col gap-1 py-1">
+          <div class="bg-[rgba(193,211,249,1)] rounded-lg pt-3 pb-10">
+            <h1 class="text-[#8E8E96] text-base mb-10 text-center">
+              QUICK ACTIONS
+            </h1>
+            <div class="flex w-full flex-col gap-3">
+              <button
+                class="bg-[#2563EB33/20] text-center rounded-lg py-4 font-semibold text-[#2563EB] text-sm hover:text-white hover:bg-[#2563EB] transition-all duration-300 ease border border-[#2563EB] cursor-pointer box-border"
+              >
+                Request Repair
+              </button>
+              <button
+                class="bg-white text-center rounded-lg py-4 font-semibold text-[#8E8E96] text-sm hover:text-white hover:bg-[#2563EB] transition-all duration-300 ease border border-[#2563EB] cursor-pointer"
+              >
+                Find Technician
+              </button>
+            </div>
+          </div>
+          <div class="bg-[rgba(193,211,249,1)] rounded-lg pt-3 px-3 pb-10">
+            <div class="flex flex-col gap-1 mb-7 text-center">
+              <h1 class="text-[#8E8E96] text-base">Need Help?</h1>
+              <p class="text-base text-slate-400">Our Support team</p>
+              <p class="text-base text-[#8E8E96] text-slate-400">
+                is here to help you
+              </p>
+            </div>
+            <div class="flex w-full flex-col gap-3">
+              <button
+                class="bg-[#2563EB33/20] text-center rounded-lg py-4 font-semibold text-[#2563EB] text-sm hover:text-white hover:bg-[#2563EB] transition-all duration-300 ease border border-[#2563EB] cursor-pointer box-border"
+              >
+                Contact Support
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="w-full text-center text-[#C4C4C4] text-base font-semibold my-5"
+        >
+          <p>2026 Repairhub</p>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+
+      <section class="flex-1 pt-20">
+        <!-- PAGE HEADING -->
+
+        <div>
+          <h1 class="text-3xl font-bold">Select Technician</h1>
+
+          <p class="mt-1 text-lg text-gray-500">
+            Compare quotes and choose the best technician for your repair
+          </p>
+        </div>
+
+        <!-- SEARCH + FILTER -->
+
+        <div class="mt-7 flex items-center gap-12">
+          <!-- SEARCH -->
+
+          <div
+            class="flex h-9 w-[470px] items-center rounded-lg border border-gray-300 px-5"
+          >
+            <i data-lucide="search" class="h-7 w-7 text-gray-500"> </i>
+
+            <input
+              type="text"
+              placeholder="Search technician..."
+              class="ml-5 w-full outline-none"
+            />
+          </div>
+
+          <!-- FILTER -->
+
+          <button
+            class="flex h-9 items-center gap-2 rounded-lg border border-gray-300 px-3 text-xs"
+          >
+            <i data-lucide="sliders-horizontal" class="h-4 w-4"> </i>
+
+            Filter
+
+            <i data-lucide="chevron-down" class="h-4 w-4"> </i>
+          </button>
+
+          <!-- SORT -->
+
+          <button
+            class="flex h-9 items-center gap-2 rounded-lg border border-gray-300 px-3 text-xs"
+          >
+            <span> Sort by: Best Match </span>
+
+            <i data-lucide="chevron-down" class="h-4 w-4"> </i>
+          </button>
+        </div>
+
+        <!-- TECHNICIAN 1 -->
+
+        <div class="mt-8 rounded-xl border border-blue-500 px-5 py-5">
+          <!-- TOP ROW -->
+
+          <div class="flex items-start">
+            <!-- PROFILE IMAGE -->
+
+            <img
+              src="../../src/assets/profile.png"
+              alt="Davine Johnson"
+              class="h-14 w-14 rounded-full object-cover"
+            />
+
+            <!-- INFORMATION -->
+
+            <div class="ml-5 flex-1">
+              <!-- NAME -->
+
+              <div class="flex items-center gap-3">
+                <h2 class="text-xl font-bold">Davine Johnson</h2>
+
+                <span class="flex items-center gap-1 text-sm text-blue-600">
+                  <i data-lucide="badge-check" class="h-4 w-4 fill-blue-500">
+                  </i>
+
+                  Verified Technician
+                </span>
+              </div>
+
+              <!-- RATINGS -->
+
+              <div class="mt-1 flex items-center gap-3 text-sm text-gray-400">
+                <span class="flex items-center gap-1">
+                  <i
+                    data-lucide="star"
+                    class="h-4 w-4 fill-yellow-400 text-yellow-400"
+                  >
+                  </i>
+
+                  <strong class="text-black"> 4.7 </strong>
+
+                  (23 Reviews)
+                </span>
+
+                <span> • </span>
+
+                <span> 95% Success Rate </span>
+
+                <span> • </span>
+
+                <span class="flex items-center gap-1">
+                  <i data-lucide="map-pin" class="h-4 w-4"> </i>
+
+                  1.9 km Away
+                </span>
+              </div>
             </div>
 
+            <!-- AVAILABLE -->
 
+            <span
+              class="rounded-full bg-green-100 px-4 py-1 text-xs text-green-500"
+            >
+              Available Now
+            </span>
 
-            <!-- SUPPORT -->
-          
+            <i
+              data-lucide="badge-check"
+              class="ml-7 h-5 w-5 fill-blue-500 text-blue-600"
+            >
+            </i>
+          </div>
 
-            <div class="mt-2 rounded-lg bg-blue-50 p-5">
+          <!-- TAGS + DETAILS -->
 
+          <div class="mt-5 flex items-end">
+            <!-- TAGS -->
 
-                <h3 class="text-center font-semibold text-gray-500">
-                    Need Help?
-                </h3>
+            <div class="ml-[80px] flex flex-1 gap-8">
+              <span
+                class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600"
+              >
+                Apple Expert
+              </span>
 
+              <span
+                class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600"
+              >
+                Screen Repair
+              </span>
 
-                <p class="text-center text-gray-400">
-                    Our Support team is
-                    <br>
-                    here to help you
-                </p>
+              <span
+                class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600"
+              >
+                Battery
+              </span>
 
-
-                <button
-                    class="mt-8 w-full rounded-lg border border-blue-500 py-3 font-semibold text-blue-600">
-
-                    Contact Support
-
-                </button>
-
-
+              <span
+                class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600"
+              >
+                Screen Damage
+              </span>
             </div>
 
+            <!-- SELECTED BUTTON -->
 
-            <!-- FOOTER -->
+            <button
+              class="flex w-[125px] items-center justify-center gap-2 rounded-lg bg-blue-600 py-2 text-xs font-semibold text-white"
+            >
+              <i data-lucide="check" class="h-4 w-4"> </i>
 
-            <p class="mt-5 text-center text-gray-300">
-                2026 Repairhub
-            </p>
+              Selected
+            </button>
+          </div>
 
+          <!-- BOTTOM DETAILS -->
 
+          <div class="ml-[80px] mt-3 flex gap-202 text-xs text-gray-500">
+            <div class="flex gap-32 mt-3">
+              <span class="flex items-center gap-1">
+                <i data-lucide="clock" class="h-3 w-3"> </i>
 
-        </aside>
+                2 Hours
+              </span>
 
+              <span>
+                Starting From
 
-        <!-- MAIN CONTENT -->
-   
-
-        <section class="flex-1 pt-20">
-
-
-            <!-- PAGE HEADING -->
-
-            <div>
-
-                <h1 class="text-3xl font-bold">
-                    Select Technician
-                </h1>
-
-                <p class="mt-1 text-lg text-gray-500">
-                    Compare quotes and choose the best technician for your repair
-                </p>
-
+                <strong class="ml-2 text-blue-600"> ₦25,000 </strong>
+              </span>
             </div>
 
+            <!-- SELECTED BUTTON -->
 
-
-         
-            <!-- SEARCH + FILTER -->
-           
-
-            <div class="mt-7 flex items-center gap-12">
-
-
-                <!-- SEARCH -->
-
-                <div class="flex h-9 w-[470px] items-center rounded-lg border border-gray-300 px-5">
-
-                    <i data-lucide="search"
-                       class="h-7 w-7 text-gray-500">
-                    </i>
-
-                    <input
-                        type="text"
-                        placeholder="Search technician..."
-                        class="ml-5 w-full outline-none"
-                    >
-
-                </div>
-
-
-                <!-- FILTER -->
-
-                <button
-                    class="flex h-9 items-center gap-2 rounded-lg border border-gray-300 px-3 text-xs">
-
-                    <i data-lucide="sliders-horizontal"
-                       class="h-4 w-4">
-                    </i>
-
-                    Filter
-
-                    <i data-lucide="chevron-down"
-                       class="h-4 w-4">
-                    </i>
-
-                </button>
-
-
-                <!-- SORT -->
-
-                <button
-                    class="flex h-9 items-center gap-2 rounded-lg border border-gray-300 px-3 text-xs">
-
-                    <span>
-                        Sort by: Best Match
-                    </span>
-
-                    <i data-lucide="chevron-down"
-                       class="h-4 w-4">
-                    </i>
-
-                </button>
-
-
-            </div>
-
-
-            <!-- TECHNICIAN 1 -->
-      
-
-            <div class="mt-8 rounded-xl border border-blue-500 px-5 py-5">
-
-
-                <!-- TOP ROW -->
-
-                <div class="flex items-start">
-
-
-                    <!-- PROFILE IMAGE -->
-
-                    <img
-                        src="../../src/assets/profile.png"
-                        alt="Davine Johnson"
-                        class="h-14 w-14 rounded-full object-cover"
-                    >
-
-
-                    <!-- INFORMATION -->
-
-                    <div class="ml-5 flex-1">
-
-
-                        <!-- NAME -->
-
-                        <div class="flex items-center gap-3">
-
-                            <h2 class="text-xl font-bold">
-                                Davine Johnson
-                            </h2>
-
-                            <span class="flex items-center gap-1 text-sm text-blue-600">
-
-                                <i data-lucide="badge-check"
-                                   class="h-4 w-4 fill-blue-500">
-                                </i>
-
-                                Verified Technician
-
-                            </span>
-
-                        </div>
-
-
-                        <!-- RATINGS -->
-
-                        <div class="mt-1 flex items-center gap-3 text-sm text-gray-400">
-
-                            <span class="flex items-center gap-1">
-
-                                <i data-lucide="star"
-                                   class="h-4 w-4 fill-yellow-400 text-yellow-400">
-                                </i>
-
-                                <strong class="text-black">
-                                    4.7
-                                </strong>
-
-                                (23 Reviews)
-
-                            </span>
-
-
-                            <span>
-                                •
-                            </span>
-
-
-                            <span>
-                                95% Success Rate
-                            </span>
-
-
-                            <span>
-                                •
-                            </span>
-
-
-                            <span class="flex items-center gap-1">
-
-                                <i data-lucide="map-pin"
-                                   class="h-4 w-4">
-                                </i>
-
-                                1.9 km Away
-
-                            </span>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <!-- AVAILABLE -->
-
-                    <span class="rounded-full bg-green-100 px-4 py-1 text-xs text-green-500">
-                        Available Now
-                    </span>
-
-
-                    <i data-lucide="badge-check"
-                       class="ml-7 h-5 w-5 fill-blue-500 text-blue-600">
-                    </i>
-
-
-                </div>
-
-
-
-                <!-- TAGS + DETAILS -->
-
-                <div class="mt-5 flex items-end">
-
-
-                    <!-- TAGS -->
-
-                    <div class="ml-[80px] flex flex-1 gap-8">
-
-
-                        <span class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600">
-                            Apple Expert
-                        </span>
-
-
-                        <span class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600">
-                            Screen Repair
-                        </span>
-
-
-                        <span class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600">
-                            Battery
-                        </span>
-
-
-                        <span class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600">
-                            Screen Damage
-                        </span>
-
-
-                    </div>
-
-                     <!-- SELECTED BUTTON -->
-
-                    <button
-                        class="flex w-[125px] items-center justify-center gap-2 rounded-lg bg-blue-600 py-2 text-xs font-semibold text-white">
-
-                        <i data-lucide="check"
-                           class="h-4 w-4">
-                        </i>
-
-                        Selected
-
-                    </button>
-
-
-
-                </div>
-
-
-                <!-- BOTTOM DETAILS -->
-
-                <div class="ml-[80px] mt-3 flex gap-202 text-xs text-gray-500">
-                    <div class="flex gap-32 mt-3">
-
-                    <span class="flex items-center gap-1">
-
-                        <i data-lucide="clock"
-                           class="h-3 w-3">
-                        </i>
-
-                        2 Hours
-
-                    </span>
-
-
-                    <span>
-
-                        Starting From
-
-                        <strong class="ml-2 text-blue-600">
-                            ₦25,000
-                        </strong>
-
-                    </span>
-
-                    </div>
-
-                     <!-- SELECTED BUTTON -->
-
-                    <!-- <button
+            <!-- <button
                         class="flex w-[125px] items-center justify-center gap-2 rounded-lg bg-blue-600 py-2 text-xs font-semibold text-white">
 
                         <i data-lucide="check"
@@ -579,354 +447,233 @@
                         Selected
 
                     </button> -->
-
-
-                </div>
-
-
-            </div>
-
-
-
- 
-            <!-- TECHNICIAN 2 -->
-        
-
-            <div class="mt-6 rounded-xl border border-gray-300 px-5 py-5">
-
-
-                <div class="flex items-start">
-
-
-                    <img
-                        src="../../src/assets/profile.png"
-                        alt="Ahmed Daudu"
-                        class="h-14 w-14 rounded-full object-cover"
-                    >
-
-
-                    <div class="ml-5 flex-1">
-
-
-                        <div class="flex items-center gap-3">
-
-                            <h2 class="text-xl font-bold">
-                                Ahmed Daudu
-                            </h2>
-
-                            <span class="flex items-center gap-1 text-sm text-blue-600">
-
-                                <i data-lucide="badge-check"
-                                   class="h-4 w-4 fill-blue-500">
-                                </i>
-
-                                Verified Technician
-
-                            </span>
-
-                        </div>
-
-
-                        <div class="mt-1 flex items-center gap-3 text-sm text-gray-400">
-
-                            <span class="flex items-center gap-1">
-
-                                <i data-lucide="star"
-                                   class="h-4 w-4 fill-yellow-400 text-yellow-400">
-                                </i>
-
-                                <strong class="text-black">
-                                    4.2
-                                </strong>
-
-                                (11 Reviews)
-
-                            </span>
-
-                            <span>
-                                •
-                            </span>
-
-                            <span>
-                                90% Success Rate
-                            </span>
-
-                            <span>
-                                •
-                            </span>
-
-                            <span>
-                                3.8 km Away
-                            </span>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <span class="rounded-full bg-green-100 px-4 py-1 text-xs text-green-500">
-                        Available Now
-                    </span>
-
-
-                </div>
-
-
-
-                <div class="mt-5 flex items-end">
-
-
-                    <div class="ml-[80px] flex flex-1 gap-8">
-
-                        <span class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600">
-                            iPhones
-                        </span>
-
-                        <span class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600">
-                            Water Damage
-                        </span>
-
-                        <span class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600">
-                            Screen Damage
-                        </span>
-
-                        <span class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600">
-                            More
-                        </span>
-
-                    </div>
-
-
-                    <button
-                        class="w-[125px] rounded-lg border border-blue-600 py-2 text-xs font-semibold text-blue-600">
-
-                        Select
-
-                    </button>
-
-
-                </div>
-
-
-
-                <div class="ml-[80px] mt-3 flex gap-32 text-xs text-gray-500">
-
-                    <span class="flex items-center gap-1">
-
-                        <i data-lucide="clock"
-                           class="h-3 w-3">
-                        </i>
-
-                        3 Hours
-
-                    </span>
-
-
-                    <span>
-
-                        Starting From
-
-                        <strong class="ml-2 text-blue-600">
-                            ₦18,000
-                        </strong>
-
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-
- 
-            <!-- TECHNICIAN 3 -->
-          
-            <div class="mt-6 rounded-xl border border-gray-300 px-5 py-5">
-
-
-                <div class="flex items-start">
-
-
-                    <img
-                        src="../../src/assets/profile.png"
-                        alt="Olalekan Adetunji"
-                        class="h-14 w-14 rounded-full object-cover"
-                    >
-
-
-                    <div class="ml-5 flex-1">
-
-
-                        <div class="flex items-center gap-3">
-
-                            <h2 class="text-xl font-bold">
-                                Olalekan Adetunji
-                            </h2>
-
-                            <span class="flex items-center gap-1 text-sm text-blue-600">
-
-                                <i data-lucide="badge-check"
-                                   class="h-4 w-4 fill-blue-500">
-                                </i>
-
-                                Verified Technician
-
-                            </span>
-
-                        </div>
-
-
-                        <div class="mt-1 flex items-center gap-3 text-sm text-gray-400">
-
-                            <span class="flex items-center gap-1">
-
-                                <i data-lucide="star"
-                                   class="h-4 w-4 fill-yellow-400 text-yellow-400">
-                                </i>
-
-                                <strong class="text-black">
-                                    4.8
-                                </strong>
-
-                                (15 Reviews)
-
-                            </span>
-
-                            <span>
-                                •
-                            </span>
-
-                            <span>
-                                96% Success Rate
-                            </span>
-
-                            <span>
-                                •
-                            </span>
-
-                            <span>
-                                1.9 km Away
-                            </span>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <span class="rounded-full bg-green-100 px-4 py-1 text-xs text-green-500">
-                        Available Now
-                    </span>
-
-
-                </div>
-
-
-
-                <div class="mt-5 flex items-end">
-
-
-                    <div class="ml-[80px] flex flex-1 gap-8">
-
-                        <span class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600">
-                            iPhones
-                        </span>
-
-                        <span class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600">
-                            Water Damage
-                        </span>
-
-                        <span class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600">
-                            Charging
-                        </span>
-
-                        <span class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600">
-                            More
-                        </span>
-
-                    </div>
-
-
-                    <button
-                        class="w-[125px] rounded-lg border border-blue-600 py-2 text-xs font-semibold text-blue-600">
-
-                        Select
-
-                    </button>
-
-
-                </div>
-
-
-
-                <div class="ml-[80px] mt-3 flex gap-32 text-xs text-gray-500">
-
-                    <span class="flex items-center gap-1">
-
-                        <i data-lucide="clock"
-                           class="h-3 w-3">
-                        </i>
-
-                        6 Hours
-
-                    </span>
-
-
-                    <span>
-
-                        Starting From
-
-                        <strong class="ml-2 text-blue-600">
-                           ₦25,000
-                        </strong>
-
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-
-            <!-- BOTTOM COMPARE BAR -->
-            
-
-            <div class="mx-auto mt-14 flex h-9 max-w-[550px] items-center rounded-lg bg-blue-200 px-4">
-
-
-                <span class="text-xs text-blue-600">
-                    Compare up to 3 technicians
+          </div>
+        </div>
+
+        <!-- TECHNICIAN 2 -->
+
+        <div class="mt-6 rounded-xl border border-gray-300 px-5 py-5">
+          <div class="flex items-start">
+            <img
+              src="../../src/assets/profile.png"
+              alt="Ahmed Daudu"
+              class="h-14 w-14 rounded-full object-cover"
+            />
+
+            <div class="ml-5 flex-1">
+              <div class="flex items-center gap-3">
+                <h2 class="text-xl font-bold">Ahmed Daudu</h2>
+
+                <span class="flex items-center gap-1 text-sm text-blue-600">
+                  <i data-lucide="badge-check" class="h-4 w-4 fill-blue-500">
+                  </i>
+
+                  Verified Technician
+                </span>
+              </div>
+
+              <div class="mt-1 flex items-center gap-3 text-sm text-gray-400">
+                <span class="flex items-center gap-1">
+                  <i
+                    data-lucide="star"
+                    class="h-4 w-4 fill-yellow-400 text-yellow-400"
+                  >
+                  </i>
+
+                  <strong class="text-black"> 4.2 </strong>
+
+                  (11 Reviews)
                 </span>
 
+                <span> • </span>
 
-                <div class="mx-5 h-[1px] flex-1 bg-gray-400">
-                </div>
+                <span> 90% Success Rate </span>
 
+                <span> • </span>
 
-                <span class="text-xs text-gray-500">
-                    0/3 Selected
-                </span>
-
-
-                <button
-                    class="ml-10 w-[150px] rounded-lg bg-blue-600 py-1 text-xs font-semibold text-white">
-
-                    Continue
-
-                </button>
-
-
+                <span> 3.8 km Away </span>
+              </div>
             </div>
 
+            <span
+              class="rounded-full bg-green-100 px-4 py-1 text-xs text-green-500"
+            >
+              Available Now
+            </span>
+          </div>
 
-        </section>
-        
+          <div class="mt-5 flex items-end">
+            <div class="ml-[80px] flex flex-1 gap-8">
+              <span
+                class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600"
+              >
+                iPhones
+              </span>
 
+              <span
+                class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600"
+              >
+                Water Damage
+              </span>
+
+              <span
+                class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600"
+              >
+                Screen Damage
+              </span>
+
+              <span
+                class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600"
+              >
+                More
+              </span>
+            </div>
+
+            <button
+              class="w-[125px] rounded-lg border border-blue-600 py-2 text-xs font-semibold text-blue-600"
+            >
+              Select
+            </button>
+          </div>
+
+          <div class="ml-[80px] mt-3 flex gap-32 text-xs text-gray-500">
+            <span class="flex items-center gap-1">
+              <i data-lucide="clock" class="h-3 w-3"> </i>
+
+              3 Hours
+            </span>
+
+            <span>
+              Starting From
+
+              <strong class="ml-2 text-blue-600"> ₦18,000 </strong>
+            </span>
+          </div>
+        </div>
+
+        <!-- TECHNICIAN 3 -->
+
+        <div class="mt-6 rounded-xl border border-gray-300 px-5 py-5">
+          <div class="flex items-start">
+            <img
+              src="../../src/assets/profile.png"
+              alt="Olalekan Adetunji"
+              class="h-14 w-14 rounded-full object-cover"
+            />
+
+            <div class="ml-5 flex-1">
+              <div class="flex items-center gap-3">
+                <h2 class="text-xl font-bold">Olalekan Adetunji</h2>
+
+                <span class="flex items-center gap-1 text-sm text-blue-600">
+                  <i data-lucide="badge-check" class="h-4 w-4 fill-blue-500">
+                  </i>
+
+                  Verified Technician
+                </span>
+              </div>
+
+              <div class="mt-1 flex items-center gap-3 text-sm text-gray-400">
+                <span class="flex items-center gap-1">
+                  <i
+                    data-lucide="star"
+                    class="h-4 w-4 fill-yellow-400 text-yellow-400"
+                  >
+                  </i>
+
+                  <strong class="text-black"> 4.8 </strong>
+
+                  (15 Reviews)
+                </span>
+
+                <span> • </span>
+
+                <span> 96% Success Rate </span>
+
+                <span> • </span>
+
+                <span> 1.9 km Away </span>
+              </div>
+            </div>
+
+            <span
+              class="rounded-full bg-green-100 px-4 py-1 text-xs text-green-500"
+            >
+              Available Now
+            </span>
+          </div>
+
+          <div class="mt-5 flex items-end">
+            <div class="ml-[80px] flex flex-1 gap-8">
+              <span
+                class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600"
+              >
+                iPhones
+              </span>
+
+              <span
+                class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600"
+              >
+                Water Damage
+              </span>
+
+              <span
+                class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600"
+              >
+                Charging
+              </span>
+
+              <span
+                class="rounded-full bg-blue-100 px-10 py-1 text-xs text-blue-600"
+              >
+                More
+              </span>
+            </div>
+
+            <button
+              class="w-[125px] rounded-lg border border-blue-600 py-2 text-xs font-semibold text-blue-600"
+            >
+              Select
+            </button>
+          </div>
+
+          <div class="ml-[80px] mt-3 flex gap-32 text-xs text-gray-500">
+            <span class="flex items-center gap-1">
+              <i data-lucide="clock" class="h-3 w-3"> </i>
+
+              6 Hours
+            </span>
+
+            <span>
+              Starting From
+
+              <strong class="ml-2 text-blue-600"> ₦25,000 </strong>
+            </span>
+          </div>
+        </div>
+
+        <!-- BOTTOM COMPARE BAR -->
+
+        <div
+          class="mx-auto mt-14 flex h-9 max-w-[550px] items-center rounded-lg bg-blue-200 px-4"
+        >
+          <span class="text-xs text-blue-600">
+            Compare up to 3 technicians
+          </span>
+
+          <div class="mx-5 h-[1px] flex-1 bg-gray-400"></div>
+
+          <span class="text-xs text-gray-500"> 0/3 Selected </span>
+
+          <button
+            class="ml-10 w-[150px] rounded-lg bg-blue-600 py-1 text-xs font-semibold text-white"
+          >
+            Continue
+          </button>
+        </div>
+      </section>
     </main>
-<!-- 
+    <!-- 
    <footer class="w-100% ml-50">
        <p class="mt-5 ml-50 text-gray-300">
                 2026 Repairhub
@@ -936,8 +683,7 @@
     <!-- INITIALIZE LUCIDE ICONS -->
 
     <script>
-        lucide.createIcons();
+      lucide.createIcons();
     </script>
-
-</body>
+  </body>
 </html>
