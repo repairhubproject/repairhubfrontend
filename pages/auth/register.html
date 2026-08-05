@@ -23,9 +23,10 @@
   />
 </head>
 <body class="bg-cover bg-center bg-[url('/Rectangle-bg.png')] bg-no-repeat min-h-screen py-5">
+  <div class=""></div>
   <div class="max-w-lg rounded-3xl w-[95%] mx-auto bg-white py-5 px-3 md:px-5">
     <div class="flex flex-col">
-      <img src="/logo-4.png" alt="RepairHub Logo" class="w-[200px] h-[200px] mx-auto">
+      <img src="/logo-4.png" alt="RepairHub Logo" class="w-[220px] h-[200px] mx-auto mt-[-40px]">
       <div class="space-y-2 text-center w-full">
         <h1 class="text-xl md:text-2xl font-bold">Create Account</h1>
         <div>
@@ -34,28 +35,36 @@
         </div>
       </div>
     </div>
-    <form action="" class="w-full space-y-6">
+    <form action="" class="w-full space-y-6" id="registerForm" method="post">
+      <div class="">
+        <label class="text-sm md:text-lg text-black font-bold">Role</label>
+        <select id="role" name="role" class="w-full border border-black rounded-2xl px-3 py-4 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option value="customer">Customer</option>
+          <option value="technician">Technician</option>
+        </select>
+      </div>
       <div>
         <label for="name" class="text-sm md:text-lg text-black font-bold">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" class="w-full border border-black rounded-2xl px-3 py-4 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="text" id="name" name="name" placeholder="Enter your full name" class="w-full border border-black rounded-2xl px-3 py-4 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500" minlength="3" maxlength="50" required>
       </div>
       <div>
-        <label for="name" class="text-sm md:text-lg text-black font-bold">Email address</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" class="w-full border border-black rounded-2xl px-3 py-4 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <label for="email" class="text-sm md:text-lg text-black font-bold">Email address</label>
+        <input type="text" id="email" name="email" placeholder="Enter your email address" class="w-full border border-black rounded-2xl px-3 py-4 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
       </div>
       <div>
-        <label for="name" class="text-sm md:text-lg text-black font-bold">Phone Number</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" class="w-full border border-black rounded-2xl px-3 py-4 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <label for="phone" class="text-sm md:text-lg text-black font-bold">Phone Number</label>
+        <input type="text" id="phone" name="phone" placeholder="Enter your phone number" class="w-full border border-black rounded-2xl px-3 py-4 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
       </div>
-      <div>
+      <div >
         <label for="name" class="text-sm md:text-lg text-black font-bold">Password</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" class="w-full border border-black rounded-2xl px-3 py-4 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <input type="password" id="password" name="password" placeholder="Enter your password" class="w-full border border-black rounded-2xl px-3 py-4 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500" minlength="8" required>
       </div>
       <div>
-        <button type="submit" class="w-full text-sm md:text-lg font-medium bg-[#2563EB] text-white py-4 rounded-md hover:bg-blue-600 transition-colors duration-300 active:scale-99 cursor-pointer">Register</button>
-        <p class="md:text-lg text-sm text-black w-full text-center mt-2">already  have an account?  <a href="/login.html" class="text-[#2563EB] hover:underline">login</a> </p>
+        <button type="submit" class="w-full text-sm md:text-lg font-medium bg-[#2563EB] text-white py-4 rounded-md hover:bg-blue-600 transition-colors duration-300 active:scale-99 cursor-pointer" id="submit">Register</button>
+        <p class="md:text-lg text-sm text-black w-full text-center mt-2">already  have an account?  <a href="/pages/auth/login.html" class="text-[#2563EB] hover:underline">login</a> </p>
       </div>
     </form>
   </div>
+  <script src="../../src/js/pages/register.js" type="module"></script>
 </body>
 </html>
