@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <title>repairhubfrontend</title>
+  </head>
+  <body>
+    <div id="app">
+
+      <header class="bg-white border-b sticky top-0 z-30">
+        <div class="flex items-center justify-between px-4 py-3 gap-3">
+          <button id="menuBtn" class="md:hidden text-gray-600">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+          <a href="dashboard.html" class="flex items-center gap-2 font-bold text-blue-700 text-lg shrink-0">
+            <span class="bg-blue-700 text-white rounded-md w-8 h-8 flex items-center justify-center text-sm">RH</span>
+            <span class="hidden sm:inline">RepairHub</span>
+          </a>
+          <div class="flex-1 max-w-xl">
+            <div class="relative">
+              <input type="text" placeholder="Search jobs, requests..."
+                class="w-full border border-gray-300 rounded-full py-2 pl-4 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+              <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z"/></svg>
+            </div>
+          </div>
+          <img src="https://via.placeholder.com/32" class="w-8 h-8 rounded-full shrink-0" alt="profile">
+        </div>
+      </header>
+
+      <div class="flex">
+        <aside id="sidebar" class="hidden md:flex md:flex-col w-60 bg-white border-r min-h-screen p-4 shrink-0">
+          <p class="text-xs font-semibold text-gray-400 mb-2 mt-2">MAIN</p>
+          <nav class="flex flex-col gap-1 text-sm">
+            <a href="dashboard.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Dashboard</a>
+            <a href="jobs.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Jobs</a>
+            <a href="requests.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Requests</a>
+          </nav>
+          <p class="text-xs font-semibold text-gray-400 mb-2 mt-6">ACCOUNT</p>
+          <nav class="flex flex-col gap-1 text-sm">
+            <a href="business-details.html" class="px-3 py-2 rounded-lg bg-blue-50 text-blue-700 font-medium">Business Details</a>
+            <a href="wallet.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Wallet</a>
+            <a href="reviews.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Reviews</a>
+            <a href="profile.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Profile</a>
+            <a href="settings.html" class="px-3 py-2 rounded-lg hover:bg-gray-100">Settings</a>
+          </nav>
+        </aside>
+
+        <main class="flex-1 p-4 sm:p-6 max-w-2xl">
+          <h1 class="text-xl font-bold mb-1">Business Details</h1>
+          <p class="text-sm text-gray-500 mb-6">Manage your business information and availability</p>
+
+          <form id="businessDetailsForm" class="bg-white border rounded-xl p-4 sm:p-6 flex flex-col gap-5">
+
+            <!-- Logo upload -->
+            <div class="flex flex-col items-center gap-2">
+              <div id="logoPreviewWrapper" class="w-20 h-20 rounded-full bg-blue-50 flex items-center justify-center overflow-hidden border">
+                <img id="logoPreview" src="" alt="" class="w-full h-full object-cover hidden">
+                <svg id="logoPlaceholderIcon" class="w-8 h-8 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14M14 8h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              </div>
+              <label for="logoInput" class="text-blue-700 text-sm font-medium cursor-pointer hover:underline">Change Business Logo</label>
+              <input type="file" id="logoInput" accept="image/*" class="hidden">
+            </div>
+
+            <!-- Business Name -->
+            <div>
+              <label class="text-sm font-medium text-gray-700 block mb-1">Business Name</label>
+              <input type="text" id="businessName" placeholder="Fixit Pro Solutions"
+                class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+            </div>
+
+            <!-- Service Radius -->
+            <div>
+              <label class="text-sm font-medium text-gray-700 block mb-1">Service Radius (km)</label>
+              <div class="flex items-center gap-3">
+                <input type="range" id="serviceRadius" min="1" max="100" value="20" class="w-full accent-blue-700">
+                <span id="serviceRadiusValue" class="text-sm font-medium w-14 text-right">20 km</span>
+              </div>
+            </div>
+
+            <!-- Privacy & Specialization -->
+            <div>
+              <label class="text-sm font-medium text-gray-700 block mb-1">Privacy &amp; Specialization</label>
+              <div id="specializationTags" class="flex flex-wrap gap-2 border border-gray-300 rounded-lg p-2 min-h-[42px]">
+                <!-- TODO: tags populated dynamically from technician's saved specializations -->
+                <span class="tag flex items-center gap-1 bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded-full">
+                  Apple Devices &amp; Laptops
+                  <button type="button" class="remove-tag text-blue-700 hover:text-blue-900">&times;</button>
+                </span>
+              </div>
+              <input type="text" id="addSpecializationInput" placeholder="Type and press Enter to add a specialization"
+                class="w-full mt-2 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+            </div>
+
+            <!-- Instant bookings toggle -->
+            <div class="flex items-center justify-between bg-gray-50 rounded-lg p-3">
+              <div>
+                <p class="text-sm font-medium">Available for Instant Bookings</p>
+                <p class="text-xs text-gray-500 mt-1">Your business profile is visible to customers who search within your set radius</p>
+              </div>
+              <label class="relative inline-flex items-center cursor-pointer shrink-0 ml-3">
+                <input type="checkbox" id="instantBookingsToggle" class="sr-only peer" checked>
+                <div class="w-11 h-6 bg-gray-300 rounded-full peer peer-checked:bg-blue-700 transition-colors"></div>
+                <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform peer-checked:translate-x-5"></div>
+              </label>
+            </div>
+
+            <button type="submit" class="w-full bg-blue-700 text-white py-3 rounded-lg text-sm font-medium hover:bg-blue-800">
+              Save Changes
+            </button>
+          </form>
+        </main>
+      </div>
+
+    </div>
+    <script type="module" src="/src/js/pages/profile.js"></script>
+  </body>
+</html>

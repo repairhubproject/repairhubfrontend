@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RepairHub - Create Repair Request</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(160deg, #3b5bdb 0%, #7ea6f2 35%, #bfe3fb 70%, #8fd6f7 100%);
+  }
+  .shake {
+    animation: shake 0.35s;
+  }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+  }
+</style>
+</head>
+<body class="min-h-screen flex items-center justify-center py-10 px-4">
+
+  <div class="w-full max-w-md bg-gradient-to-b from-white to-blue-50 rounded-2xl shadow-xl px-8 py-8">
+
+    <!-- Logo -->
+    <div class="flex flex-col items-center mb-6 gap-3">
+      <!-- <div class="w-14 h-14 flex items-center justify-center mb-2"> -->
+        <div class="w-[241px] h-[181px] lg:w-[152px] lg:h-[100px] ml-6">
+            <img src="../../src/assets/images/logo 4.png" alt="" class="object-fit w-full h-full">
+          </div>
+
+    <h2 class="text-xl font-bold text-center text-gray-900 mb-6">Create Repair Request</h2>
+   </div>
+    <form id="repairForm" class="space-y-5">
+
+      <!-- Select Type -->
+      <div>
+        <label class="block text-sm text-gray-800 mb-1" for="deviceType">Select Type</label>
+        <div class="relative">
+          <select id="deviceType" required class="w-full appearance-none border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <option>Smartphone</option>
+            <option>Laptop</option>
+            <option>Tablet</option>
+            <option>Smartwatch</option>
+          </select>
+          <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </div>
+
+      <!-- Serial Number -->
+      <div>
+        <label class="block text-sm text-gray-800 mb-1" for="serialNumber">Device serial Number</label>
+        <div class="relative">
+          <input type="text" id="serialNumber" placeholder="Enter serial number" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 pr-10 text-gray-800 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400">
+          <button type="button" id="scanBtn" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-blue-500">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 8V5a1 1 0 011-1h3M4 16v3a1 1 0 001 1h3M20 8V5a1 1 0 00-1-1h-3M20 16v3a1 1 0 01-1 1h-3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Brand -->
+      <div>
+        <label class="block text-sm text-gray-800 mb-1" for="brand">Brand</label>
+        <div class="relative">
+          <select id="brand" required class="w-full appearance-none border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <option>Samsung</option>
+            <option>Apple</option>
+            <option>Google</option>
+            <option>Xiaomi</option>
+          </select>
+          <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+      </div>
+
+      <!-- Model -->
+      <div>
+        <label class="block text-sm text-gray-800 mb-1" for="model">Model</label>
+        <div class="relative">
+          <select id="model" required class="w-full appearance-none border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <option value="">Select a model</option>
+            <option>Galaxy S20</option>
+            <option>Galaxy S23</option>
+            <option>Galaxy Note 20</option>
+          </select>
+          <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <p id="modelError" class="hidden text-red-500 text-xs mt-1 flex items-center gap-1">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><rect x="11" y="6" width="2" height="7" fill="white"/><rect x="11" y="15" width="2" height="2" fill="white"/></svg>
+          Please select a model
+        </p>
+      </div>
+
+      <!-- Description -->
+      <div>
+        <label class="block font-bold text-gray-900 mb-1" for="description">What needs to be repaired</label>
+        <textarea id="description" rows="3" placeholder="Describe the issue" class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 font-medium bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"></textarea>
+      </div>
+
+      <!-- Continue button -->
+      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-full transition">
+        Continue
+      </button>
+    </form>
+  </div>
+
+<script src="../../request-form.js">
+ 
+</script>
+
+</body>
+</html>

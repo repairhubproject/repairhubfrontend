@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Settings - RepairHub Admin</title>
+    <link rel="stylesheet" href="../../src/style.css">
+</head>
+
+<!--
+    No settings/config backend endpoint exists yet. Toggles and inputs
+    here are interactive client-side only and are not persisted. See
+    admin-settings.js.
+-->
+
+<body class="bg-[#f8fafc] text-[#111827]">
+
+    <div id="adminSidebarRoot"></div>
+
+    <div class="min-h-screen lg:ml-[234px]">
+
+        <div id="adminTopbarRoot"></div>
+
+        <main class="px-5 pb-8 sm:px-8">
+
+            <div class="mb-6 flex justify-end gap-2">
+                <button id="discardBtn" class="rounded-lg border border-gray-200 px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-50">
+                    Discard Changes
+                </button>
+                <button id="saveBtn" class="rounded-lg bg-blue-600 px-4 py-2 text-xs font-semibold text-white hover:bg-blue-700">
+                    Save System Settings
+                </button>
+            </div>
+
+            <div class="grid gap-6 xl:grid-cols-[minmax(0,2fr)_360px]">
+
+                <div class="space-y-6">
+
+                    <!-- COMMISSION & ESCROW -->
+                    <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                        <h2 class="font-bold">Financial Commission & Escrow Rules</h2>
+
+                        <div class="mt-4 grid gap-4 sm:grid-cols-2">
+                            <div>
+                                <label class="text-xs font-semibold text-slate-500">Platform Commission Percentage</label>
+                                <div class="mt-1 flex items-center rounded-lg border border-gray-200 px-3">
+                                    <input id="commissionInput" type="number" value="15" class="h-9 w-full outline-none">
+                                    <span class="text-xs text-slate-400">%</span>
+                                </div>
+                                <p class="mt-1 text-[10px] text-slate-400">Default commission deducted from technician gross payouts.</p>
+                            </div>
+
+                            <div>
+                                <label class="text-xs font-semibold text-slate-500">Escrow Auto-Release Window</label>
+                                <div class="mt-1 flex items-center rounded-lg border border-gray-200 px-3">
+                                    <input id="escrowWindowInput" type="number" value="72" class="h-9 w-full outline-none">
+                                    <span class="text-xs text-slate-400">Hours</span>
+                                </div>
+                                <p class="mt-1 text-[10px] text-slate-400">Time window before automatic payout release after repair completion.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KYC -->
+                    <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                        <h2 class="font-bold">KYC & Verification Requirements</h2>
+
+                        <div class="mt-4 space-y-4" id="kycToggles">
+
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-semibold">Require BVN (Bank Verification Number)</p>
+                                    <p class="text-xs text-slate-500">Mandatory for all registered technicians before receiving escrow payouts.</p>
+                                </div>
+                                <button data-toggle="bvn" class="toggle-btn h-6 w-11 rounded-full bg-blue-600 p-0.5" aria-pressed="true">
+                                    <span class="toggle-dot block h-5 w-5 translate-x-5 rounded-full bg-white transition"></span>
+                                </button>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-semibold">Government Issued ID Upload</p>
+                                    <p class="text-xs text-slate-500">Require NIN, Driver's License, or Voter's Card during onboarding.</p>
+                                </div>
+                                <button data-toggle="govId" class="toggle-btn h-6 w-11 rounded-full bg-blue-600 p-0.5" aria-pressed="true">
+                                    <span class="toggle-dot block h-5 w-5 translate-x-5 rounded-full bg-white transition"></span>
+                                </button>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-semibold">Physical Store Inspection Audit</p>
+                                    <p class="text-xs text-slate-500">Require manual photo verification of physical workshop premises.</p>
+                                </div>
+                                <button data-toggle="storeAudit" class="toggle-btn h-6 w-11 rounded-full bg-slate-200 p-0.5" aria-pressed="false">
+                                    <span class="toggle-dot block h-5 w-5 translate-x-0 rounded-full bg-white transition"></span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- PERMISSIONS MATRIX -->
+                    <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                        <h2 class="font-bold">Admin Role Permissions Matrix</h2>
+
+                        <div class="mt-4 overflow-x-auto">
+                            <table class="w-full min-w-[500px] text-left text-sm">
+                                <thead>
+                                    <tr class="border-b text-xs text-slate-500">
+                                        <th class="py-2">Permission Scope</th>
+                                        <th class="py-2 text-center">Super Admin</th>
+                                        <th class="py-2 text-center">Operations</th>
+                                        <th class="py-2 text-center">Support</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="permissionsTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="space-y-6">
+
+                    <!-- API KEYS -->
+                    <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                        <h2 class="font-bold">API Integration Keys</h2>
+
+                        <div class="mt-4 space-y-4" id="apiKeys"></div>
+
+                        <button id="rotateKeysBtn" class="mt-4 w-full rounded-lg border border-gray-200 py-2 text-xs font-semibold text-blue-600 hover:bg-blue-50">
+                            Rotate API Keys
+                        </button>
+                    </div>
+
+                    <!-- OPERATIONAL HEALTH -->
+                    <div class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                        <h2 class="text-xs font-semibold uppercase tracking-wider text-slate-500">Operational Health</h2>
+
+                        <div class="mt-4 space-y-3 text-sm">
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-500">Payout Node Status</span>
+                                <span class="font-semibold text-emerald-600">Online</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-500">Escrow Engine Latency</span>
+                                <span class="font-semibold">14ms</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-slate-500">Last Auto-Release Audit</span>
+                                <span class="font-semibold">5 mins ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script type="module" src="../../src/js/admin-settings.js"></script>
+
+</body>
+
+</html>

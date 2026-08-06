@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -308,4 +308,322 @@
       type="module"
     ></script> -->
   </body>
+</html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RepairHub - Booking Confirmation</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: 'Helvetica Neue', Arial, sans-serif; }
+</style>
+</head>
+<body class="bg-white text-gray-800">
+
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-blue-50 flex flex-col justify-between border-r border-blue-100">
+    <div>
+      <div class="flex items-center ml-6 mt-2 gap-5">
+          <div class="w-[30px] h-[30px] lg:w-[60px] lg:h-[60px]">
+            <img src="../../src/assets/images/logo.png" alt="" class="object-fit w-full h-full">
+          </div>
+          <span class="font-semibold text-black lg:text-2xl text-lg">RepairHub</span>
+        </div>
+
+      <!-- Main nav -->
+      <div class="px-4">
+        <p class="text-xs font-semibold text-gray-400 px-2 mb-2 mt-2 tracking-wide">MAIN</p>
+        <nav class="flex flex-col gap-1">
+          <a href="#" data-nav class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-blue-100 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h4v-6h6v6h4a1 1 0 001-1V10"/></svg>
+            Dashboard
+          </a>
+          <a href="#" data-nav class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-blue-100 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            Search
+          </a>
+          <a href="#" data-nav class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-blue-100 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.77z"/></svg>
+            Repairs
+          </a>
+          <a href="#" data-nav data-active="true" class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-400 text-white font-medium transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Bookings
+          </a>
+          <a href="#" data-nav class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-blue-100 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Categories
+          </a>
+        </nav>
+
+        <p class="text-xs font-semibold text-gray-400 px-2 mb-2 mt-6 tracking-wide">ACCOUNT</p>
+        <nav class="flex flex-col gap-1">
+          <a href="#" data-nav class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-blue-100 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            Message
+          </a>
+          <a href="#" data-nav class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-blue-100 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+            Notification
+          </a>
+          <a href="#" data-nav class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-blue-100 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0114 0v1"/></svg>
+            Profile
+          </a>
+          <a href="#" data-nav class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-blue-100 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 17.3l-6.16 3.24 1.18-6.88L2 8.76l6.92-1L12 1.5l3.08 6.26 6.92 1-5.02 4.9 1.18 6.88z"/></svg>
+            Reviews
+          </a>
+          <a href="#" data-nav class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-blue-100 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Saved Addresses
+          </a>
+          <a href="#" data-nav class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-blue-100 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+            Payment Methods
+          </a>
+        </nav>
+
+        <p class="text-xs font-semibold text-gray-400 px-2 mb-2 mt-6 tracking-wide">SYSTEM</p>
+        <nav class="flex flex-col gap-1">
+          <a href="#" data-nav class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-blue-100 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            Settings
+          </a>
+          <a href="#" data-nav class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-gray-600 hover:bg-blue-100 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 2-3 4"/><path d="M12 17h.01"/></svg>
+            Help &amp; support
+          </a>
+          <a href="#" id="logoutBtn" class="nav-item flex items-center gap-3 px-3 py-2 rounded-lg text-blue-500 hover:bg-blue-100 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+            Logout
+          </a>
+        </nav>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="flex-1 flex flex-col">
+
+    <!-- Topbar -->
+    <div class="flex items-center justify-between px-8 py-4 border-b border-gray-100">
+      <div class="relative w-80">
+        <input type="text" placeholder="Search for a service" class="w-full border border-gray-200 rounded-full pl-4 pr-10 py-2 text-sm text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-300">
+        <svg class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+      </div>
+
+      <div class="flex items-center gap-5">
+        <button class="text-blue-500 hover:text-blue-700">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+        </button>
+        <button id="notifBtn" class="text-blue-500 hover:text-blue-700 relative">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+        </button>
+        <button class="flex items-center gap-1 text-blue-500 hover:text-blue-700 text-sm font-medium">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 2-3 4"/><path d="M12 17h.01"/></svg>
+          Help
+        </button>
+        <div class="flex items-center gap-2 pl-3 border-l border-gray-200">
+          <img src="../../src/assets/profile.png" class="w-8 h-8 rounded-full object-cover" alt="John Bull">
+          <span class="text-sm font-medium text-gray-800">John BULL</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page content -->
+    <div class="px-8 py-8">
+
+      <div class="flex items-start gap-3 mb-6">
+        <button id="backBtn" class="mt-1 text-gray-800 hover:text-blue-500">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div>
+          <h1 class="text-2xl font-bold text-gray-900">Booking Confirmation</h1>
+          <p class="text-gray-500 text-sm mt-1">Review everything before making payment</p>
+        </div>
+      </div>
+
+      <!-- Step tracker -->
+      <div class="flex items-center mb-10 max-w-3xl">
+        <div class="flex flex-col items-center">
+          <div class="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-white">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <span class="text-xs text-gray-500 mt-2">Device</span>
+        </div>
+        <div class="flex-1 h-0.5 bg-blue-600 mb-5"></div>
+        <div class="flex flex-col items-center">
+          <div class="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-white">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <span class="text-xs text-gray-500 mt-2">Request</span>
+        </div>
+        <div class="flex-1 h-0.5 bg-blue-600 mb-5"></div>
+        <div class="flex flex-col items-center">
+          <div class="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-white">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <span class="text-xs text-gray-500 mt-2">Quotations</span>
+        </div>
+        <div class="flex-1 h-0.5 bg-blue-600 mb-5"></div>
+        <div class="flex flex-col items-center">
+          <div class="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-white">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <span class="text-xs text-gray-500 mt-2">Technician</span>
+        </div>
+        <div class="flex-1 h-0.5 bg-blue-600 mb-5"></div>
+        <div class="flex flex-col items-center">
+          <div class="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-white ring-4 ring-blue-100">
+            <div class="w-2.5 h-2.5 rounded-full bg-white"></div>
+          </div>
+          <span class="text-xs text-gray-800 font-medium mt-2">Confirmation</span>
+        </div>
+        <div class="flex-1 h-0.5 bg-gray-200 mb-5"></div>
+        <div class="flex flex-col items-center">
+          <div class="w-7 h-7 rounded-full border-2 border-gray-300 bg-white"></div>
+          <span class="text-xs text-gray-400 mt-2">Payment</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- Left column -->
+        <div class="lg:col-span-2 space-y-6">
+
+          <!-- Device card -->
+          <div class="border border-gray-200 rounded-xl p-6">
+            <div class="flex gap-4">
+              <img src="../../src/assets/Rectangle 78.png" alt="iPhone 11 Pro Max" class="w-20 h-24 object-cover rounded-lg bg-gray-100">
+              <div>
+                <h3 class="font-bold text-gray-900">iPhone 11 Pro Max</h3>
+                <p class="text-gray-500 text-sm">Screen Replacement</p>
+                <p class="text-blue-500 text-sm font-medium mt-2">ID: #PR-21895</p>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-100 mt-5 pt-5">
+              <p class="flex items-center gap-2 font-medium text-gray-900 mb-1">
+                <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                Problem Description
+              </p>
+              <p class="text-gray-500 text-sm">My screen is cracked and the touch is unresponsive</p>
+            </div>
+
+            <div class="flex gap-10 mt-5">
+              <div>
+                <p class="flex items-center gap-2 text-sm text-gray-900 font-medium">
+                  <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  Estimated Repair Time
+                </p>
+                <p class="text-gray-500 text-sm mt-1 ml-6">2-4 Hours</p>
+              </div>
+              <div>
+                <p class="flex items-center gap-2 text-sm text-gray-900 font-medium">
+                  <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                  Preferred Date
+                </p>
+                <p class="text-gray-500 text-sm mt-1 ml-6">Tomorrow, 10:00 AM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technician card -->
+          <div class="border border-gray-200 rounded-xl p-6">
+            <div class="flex items-center gap-4">
+              <img src="../../src/assets/profile.png" alt="Davine Johnson" class="w-14 h-14 rounded-full object-cover">
+              <div class="flex-1">
+                <h3 class="font-bold text-gray-900">Davine Johnson</h3>
+                <p class="flex items-center gap-1 text-blue-500 text-sm">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                  Verified Technician
+                </p>
+                <div class="flex items-center gap-3 mt-1 text-sm text-gray-600">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-3.5 h-3.5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.3l-6.16 3.24 1.18-6.88L2 8.76l6.92-1L12 1.5l3.08 6.26 6.92 1-5.02 4.9 1.18 6.88z"/></svg>
+                    4.7 (23 Reviews)
+                  </span>
+                  <span>&bull;</span>
+                  <span><span class="font-semibold text-gray-800">95%</span> Success Rate</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-3 mt-4">
+              <button id="messageBtn" class="flex-1 flex items-center justify-center gap-2 border border-blue-500 text-blue-500 rounded-lg py-2 text-sm font-medium hover:bg-blue-50 transition">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                Message
+              </button>
+              <button id="callBtn" class="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white rounded-lg py-2 text-sm font-medium hover:bg-blue-700 transition">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.68 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0122 16.92z"/></svg>
+                Call
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div class="space-y-6">
+
+          <!-- Home address -->
+          <div class="border border-gray-200 rounded-xl p-5 flex items-start gap-3">
+            <div class="w-9 h-9 bg-blue-600 rounded-full flex items-center justify-center shrink-0">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 12l9-9 9 9M4 10v10a1 1 0 001 1h4v-6h6v6h4a1 1 0 001-1V10"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <h3 class="font-bold text-gray-900">Home Address</h3>
+                <button id="editAddressBtn" class="flex items-center gap-1 text-blue-500 text-sm font-medium hover:underline">
+                  Edit
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+              </div>
+              <p class="text-gray-500 text-sm mt-1">23 Bodija Road, Ibadan, Oyo State.</p>
+            </div>
+          </div>
+
+          <!-- Cost breakdown -->
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-4">Cost Breakdown</h3>
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-800">Service Fee</span>
+                <span class="text-gray-900">&#8358;25,000</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-800">Inspection Fee</span>
+                <span class="text-gray-900">&#8358;2,000</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-800">Platform Fee</span>
+                <span class="text-gray-900">&#8358;500</span>
+              </div>
+            </div>
+            <div class="flex justify-between items-center border-t border-gray-100 mt-4 pt-4">
+              <span class="font-bold text-gray-900">Total</span>
+              <span id="totalAmount" class="font-bold text-blue-600 text-lg">&#8358;27,500</span>
+            </div>
+          </div>
+
+          <!-- Info banner -->
+          <div class="bg-blue-50 rounded-xl p-4 flex gap-3">
+            <svg class="w-5 h-5 text-blue-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <p class="text-sm text-gray-700 font-medium">Payment will be securely held by RepairHub until you confirm the repair has been completed</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center mt-8">
+        <button id="proceedBtn" class="w-full max-w-md bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 rounded-full transition">
+          Proceed to Payment
+        </button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="../../booking-confirmation.js"></script>
+</body>
 </html>

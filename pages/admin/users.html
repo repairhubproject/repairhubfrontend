@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users & Verification - RepairHub Admin</title>
+    <link rel="stylesheet" href="../../src/style.css">
+</head>
+
+<body class="bg-[#f8fafc] text-[#111827]">
+
+    <div id="adminSidebarRoot"></div>
+
+    <div class="min-h-screen lg:ml-[234px]">
+
+        <div id="adminTopbarRoot"></div>
+
+        <main class="px-5 pb-8 sm:px-8">
+
+            <!-- TABS -->
+            <div class="mb-6 flex gap-2 border-b border-gray-200">
+                <button data-tab="users" class="tab-btn border-b-2 border-blue-600 px-4 py-3 text-sm font-semibold text-blue-600">
+                    All Users
+                </button>
+                <button data-tab="verification" class="tab-btn border-b-2 border-transparent px-4 py-3 text-sm font-semibold text-slate-500 hover:text-slate-700">
+                    Technician Verification
+                    <span id="pendingBadge" class="ml-1 hidden rounded-full bg-amber-100 px-2 py-0.5 text-[10px] font-bold text-amber-700"></span>
+                </button>
+            </div>
+
+            <!-- ALL USERS PANEL -->
+            <section id="panel-users">
+
+                <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div class="flex flex-wrap items-center gap-3">
+                        <input
+                            id="userSearch"
+                            type="text"
+                            placeholder="Search by name or email..."
+                            class="h-9 w-64 rounded-lg border border-gray-200 px-3 text-sm outline-none focus:border-blue-500"
+                        >
+                        <select id="roleFilter" class="h-9 rounded-lg border border-gray-200 px-3 text-sm outline-none focus:border-blue-500">
+                            <option value="all">All Roles</option>
+                            <option value="customer">Customer</option>
+                            <option value="technician">Technician</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <p id="userCount" class="text-xs text-slate-500"></p>
+                </div>
+
+                <div class="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+                    <div class="overflow-x-auto">
+                        <table class="w-full min-w-[650px] text-left text-sm">
+                            <thead>
+                                <tr class="border-b bg-slate-50 text-xs text-slate-500">
+                                    <th class="p-3">Name</th>
+                                    <th class="p-3">Email</th>
+                                    <th class="p-3">Phone</th>
+                                    <th class="p-3">Role</th>
+                                    <th class="p-3">Joined</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody"></tbody>
+                        </table>
+                    </div>
+
+                    <p id="usersEmptyState" class="hidden p-8 text-center text-sm text-slate-400">
+                        No users found.
+                    </p>
+
+                    <p id="usersLoadingState" class="p-8 text-center text-sm text-slate-400">
+                        Loading users...
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- VERIFICATION PANEL -->
+            <section id="panel-verification" class="hidden">
+
+                <div class="mb-4 flex flex-wrap items-center gap-2">
+                    <span class="text-xs font-semibold text-slate-500">Status:</span>
+                    <div class="flex gap-1 rounded-lg bg-slate-100 p-1">
+                        <button data-status="pending" class="status-btn rounded-md bg-white px-3 py-1.5 text-xs font-semibold text-slate-900 shadow-sm">Pending</button>
+                        <button data-status="approved" class="status-btn rounded-md px-3 py-1.5 text-xs font-semibold text-slate-500">Approved</button>
+                        <button data-status="rejected" class="status-btn rounded-md px-3 py-1.5 text-xs font-semibold text-slate-500">Rejected</button>
+                    </div>
+                </div>
+
+                <div id="techList" class="grid gap-4 md:grid-cols-2 xl:grid-cols-3"></div>
+
+                <p id="techEmptyState" class="hidden rounded-xl border border-gray-200 bg-white p-8 text-center text-sm text-slate-400">
+                    No technicians in this category.
+                </p>
+
+                <p id="techLoadingState" class="rounded-xl border border-gray-200 bg-white p-8 text-center text-sm text-slate-400">
+                    Loading technicians...
+                </p>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script type="module" src="../../src/js/admin-users.js"></script>
+
+</body>
+
+</html>

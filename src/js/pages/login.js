@@ -23,19 +23,17 @@ form.addEventListener("submit", async (e) => {
 
     try {
 
-        await login(credentials);
+        const data = await login(credentials);
 
         alert("Login Successful");
 
-        const response = await getCurrentUser()
+        const dashboardByRole = {
+            admin: "/pages/admin/dashboard.html",
+            technician: "/pages/technician/dashboard.html",
+            customer: "/pages/customer/dashboard.html",
+        };
 
-       if (response.user.role === "customer") {
-            window.location.href = "/pages/customer/dashboard.html";
-        }
-
-        if (response.user.role === "technician") {
-            window.location.href = "/pages/technician/dashboard.html";
-        }
+        window.location.href = dashboardByRole[data.user?.role] || "/pages/customer/dashboard.html";
 
     } catch (error) {
 
