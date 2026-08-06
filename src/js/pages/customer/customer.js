@@ -179,3 +179,25 @@ function getUserLocation() {
 }
 
 getUserLocation();
+
+const categories =
+  document.querySelectorAll(
+    ".category"
+  );
+
+
+if (categories) {
+  categories.forEach((category) => {
+
+    category.addEventListener(
+      "click",
+      () => {
+  
+        window.location.href =
+          "/pages/customer/technicians.html";
+  
+      }
+    );
+  })
+
+}
