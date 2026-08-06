@@ -1,0 +1,28 @@
+# Render Blueprint — RepairHub frontend (Vite SPA).
+#
+# The rewrite rule is the important part: the client router (src/lib/router.js)
+# handles /login, /dashboard, /admin/technicians etc., so a request that reaches
+# Render's servers for one of those paths has no file to match and returns
+# "Not Found". Sending every unmatched path to index.html lets the router take
+# over. This covers page refreshes, pasted deep links, and the hard redirect in
+# src/api/client.js that fires on a 401.
+#
+# Render does not apply rewrites to paths where a real file exists, so
+# /assets/* and /firebase-messaging-sw.js still serve normally.
+#
+# NOTE: Render only reads this file for Blueprint-managed services. A service
+# created manually needs the same rewrite set in the dashboard under
+# Redirects/Rewrites.
+services:
+  - name: repairhubfrontend
+    type: web
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://repairhubbackend.onrender.com
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

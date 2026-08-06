@@ -1,19 +1,23 @@
 {
   "name": "repairhubfrontend",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "RepairHub - Trusted Repair Services Marketplace (Frontend, TechCrush Capstone Group 9)",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^8.1.1"
+    "preview": "vite preview",
+    "icons": "node scripts/gen-icons.mjs"
   },
   "dependencies": {
+    "axios": "^1.7.9",
+    "firebase": "^12.16.0",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
-    "chart.js": "^4.5.1",
-    "tailwindcss": "^4.3.3"
+    "tailwindcss": "^4.3.3",
+    "vite": "^6.0.7"
   }
 }

@@ -25,7 +25,9 @@ dist-ssr
 
 # Environment variables
 .env
+.env.example
 .env.local
 .env.development
 .env.production
 .env.test
+repairhub-8d58f-firebase-adminsdk-fbsvc-7c138a2e97.json

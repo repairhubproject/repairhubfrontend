@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens — transcribed from the Figma DESIGN SYSTEM frame (2469:1022).
+   This is the single place to retune the app; pages consume these, not hexes.
+
+   Note the blue ramp is not monotonic in the source: BLUE600–BLUE950 are
+   *brighter* than BLUE500, so they are not hover shades. brand-hover below is
+   a derived darker tone for interactive states, which the board does not define.
+--------------------------------------------------------------------------- */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* BLUE */
+  --color-brand-50: #bad0ff;
+  --color-brand-100: #85abff;
+  --color-brand-200: #6b9aff;
+  --color-brand-300: #5b8eff;
+  --color-brand-400: #4179f4;
+  --color-brand-500: #2563eb;  /* primary */
+  --color-brand-600: #195ff7;
+  --color-brand-700: #0c58ff;
+  --color-brand-800: #1961ff;
+  --color-brand-900: #0c58ff;
+  --color-brand-950: #0050ff;
+  --color-brand-hover: #1d4fd0; /* derived — see note above */
+
+  /* Softer blue tints the board uses for surfaces/pills but does not tokenise.
+     Sampled from the desktop renders (customer Home, 762:28). */
+  --color-brand-surface: #eff5ff;
+  --color-brand-pill: #c1d3f9;   /* active sidebar item */
+  --color-brand-sidebar: #e9effc; /* sidebar background */
+  --color-brand-chip: #e7f3ff;    /* "Available" style status chips */
+
+  /* GREEN */
+  --color-ok-50: #86ffa0;
+  --color-ok-100: #66ff86;
+  --color-ok-200: #51fd75;
+  --color-ok-300: #3bec60;
+  --color-ok-400: #23b942;
+  --color-ok-500: #169931;
+  --color-ok-600: #0e8a28;
+  --color-ok-700: #0a7521;
+  --color-ok-800: #09581a;
+  --color-ok-900: #044913;
+  --color-ok-950: #02370d;
+
+  /* GREY */
+  --color-neutral-100: #e8ede9;
+  --color-neutral-200: #e5ebe6;
+  --color-neutral-300: #dbe8dd;
+  --color-neutral-400: #cfd5d0;
+  --color-neutral-600: #8d908e;
+  --color-neutral-700: #6a6b6a;
+  --color-neutral-800: #4e4f4e;
+  --color-neutral-900: #2c2f2d;
+  --color-neutral-950: #000000;
+
+  /* Admin console shell */
+  --color-ink-900: #0f172a;
+  --color-ink-800: #1e293b;
+
+  /* Type ramp from the board's text styles */
+  --text-display: 32px;   /* onboarding header, Extra Bold */
+  --text-h1: 20px;        /* header text, Extra Bold / Semi Bold */
+  --text-label: 16px;     /* label + big button, Semi Bold / Medium */
+  --text-body: 14px;      /* body, Regular */
+  --text-meta: 12px;      /* label 2 / small button, Extra Bold / Regular */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+  /* Long unbroken strings (emails, URLs, addresses) must not widen the page. */
+  overflow-wrap: break-word;
+}
+
+/* Sidebars and filter rails scroll without showing a bar. */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* ------------------------------- Form kit -------------------------------- */
+
+@utility input {
+  /* text-base on phones: iOS Safari auto-zooms into any field smaller than 16px. */
+  @apply w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900
+         placeholder-slate-400 shadow-sm outline-none transition
+         focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20
+         disabled:cursor-not-allowed disabled:bg-slate-100 sm:text-sm;
+}
+
+@utility label {
+  @apply mb-1.5 block text-sm font-medium text-slate-700;
+}
+
+/* ------------------------------- Buttons --------------------------------- */
+
+@utility btn {
+  /* min-h-11 gives every button a 44px touch target on phones. */
+  @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-xl px-5 py-2.5
+         text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-offset-2
+         active:scale-[.98] disabled:cursor-not-allowed disabled:opacity-60 sm:min-h-0;
+}
+
+@utility btn-primary {
+  @apply btn bg-brand-500 text-white shadow-sm hover:bg-brand-hover focus:ring-brand-500;
+}
+
+@utility btn-secondary {
+  @apply btn border border-slate-300 bg-white text-slate-700 shadow-sm hover:bg-slate-50 focus:ring-slate-400;
+}
+
+@utility btn-outline {
+  @apply btn border border-brand-500 bg-white font-semibold text-brand-500
+         shadow-[0_5px_15px_rgba(0,0,0,0.12)] hover:bg-brand-surface focus:ring-brand-500;
+}
+
+@utility btn-success {
+  @apply btn bg-emerald-600 text-white shadow-sm hover:bg-emerald-700 focus:ring-emerald-500;
+}
+
+@utility btn-danger {
+  @apply btn border border-red-200 bg-red-50 text-red-700 hover:bg-red-100 focus:ring-red-400;
+}
+
+/* -------------------------------- Cards ---------------------------------- */
+
+@utility card {
+  @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
+}
+
+@utility card-raised {
+  @apply rounded-2xl bg-white shadow-[0_4px_15px_rgba(0,0,0,0.08)];
+}
